@@ -1,0 +1,22 @@
+#main-wrapper {
+  .topbar .top-navbar .navbar-header {
+    &[data-logobg="skin5"] {
+      background: $skin5;
+    }
+  }
+  .topbar .navbar-collapse,
+  .topbar {
+    &[data-navbarbg="skin5"] {
+      background: $skin5;
+    }
+  }
+  .left-sidebar {
+    &[data-sidebarbg="skin5"],
+    &[data-sidebarbg="skin5"] ul {
+      background: $skin5;
+      .create-btn {
+        background: $cyan;
+      }
+    }
+  }
+}

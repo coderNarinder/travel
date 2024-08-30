@@ -1,0 +1,112 @@
+#main-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.page-wrapper {
+  background: $body-bg;
+  position: relative;
+}
+.page-wrapper > .container-fluid {
+  padding: 20px;
+}
+.footer {
+  padding: 15px 20px;
+}
+#main-wrapper {
+  &[data-sidebartype="full"] {
+    .page-wrapper {
+      margin-left: $sidebar-width-full;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  #main-wrapper[data-layout="vertical"] {
+    &[data-sidebartype="full"] {
+      .topbar .top-navbar .navbar-header {
+        width: $sidebar-width-full;
+      }
+    }
+    &[data-sidebar-position="fixed"][data-sidebartype="full"] {
+      .topbar .top-navbar .navbar-collapse {
+        margin-left: $sidebar-width-full;
+      }
+    }
+    &[data-sidebar-position="fixed"][data-sidebartype="mini-sidebar"] {
+      .topbar .top-navbar .navbar-collapse {
+        margin-left: $sidebar-width-mini;
+      }
+    }
+    &[data-sidebartype="mini-sidebar"] {
+      .topbar .top-navbar .navbar-header {
+        width: $sidebar-width-mini;
+        .logo-text {
+          display: none;
+        }
+      }
+      .left-sidebar .upgrade-btn {
+        display: none;
+      }
+    }
+    &[data-sidebar-position="fixed"][data-sidebartype="mini-sidebar"] {
+      .topbar .top-navbar .navbar-collapse {
+        margin-left: $sidebar-width-mini;
+      }
+    }
+    &[data-sidebartype="mini-sidebar"] {
+      .page-wrapper {
+        margin-left: $sidebar-width-mini;
+      }
+      .sidebar-nav {
+        .hide-menu,
+        .has-arrow:after {
+          display: none;
+        }
+        .nav-small-cap {
+          justify-content: center;
+        }
+      }
+      .left-sidebar {
+        width: $sidebar-width-mini;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  #main-wrapper {
+    &[data-sidebartype="mini-sidebar"] {
+      .left-sidebar {
+        left: -$sidebar-width-full;
+      }
+    }
+    &.show-sidebar {
+      .left-sidebar {
+        left: 0;
+      }
+    }
+    &[data-layout="vertical"][data-sidebar-position="fixed"] {
+      .topbar .top-navbar {
+        .navbar-collapse {
+          position: relative;
+          top: $topbar-height;
+        }
+      }
+    }
+    &[data-layout="vertical"][data-header-position="fixed"][data-sidebar-position="fixed"] {
+      .topbar .top-navbar {
+        .navbar-collapse {
+          position: relative;
+          top: $topbar-height;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-only(md) {
+  #main-wrapper {
+    &[data-sidebartype="mini-sidebar"] {
+      .sidebar-nav ul .sidebar-item {
+        width: 65px;
+      }
+    }
+  }
+}
