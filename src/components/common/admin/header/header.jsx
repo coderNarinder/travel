@@ -29,7 +29,7 @@ export default function AdminHeader({ toggleSidebar }) {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span className="d-none d-md-block">
+                  <span className="d-none d-md-flex gap-1 align-items-center">
                     Create New <i className="fa fa-angle-down"></i>
                   </span>
                   <span className="d-block d-md-none">
@@ -56,7 +56,25 @@ export default function AdminHeader({ toggleSidebar }) {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <i className="mdi mdi-bell font-24"></i>
+                  <div className="notification-info">
+                    <i className="mdi mdi-settings font-24"></i>
+                    <span class="count-notification"></span>
+                  </div>
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div className="notification-info">
+                    <i className="mdi mdi-bell-outline font-24"></i>
+                    <span class="count-notification"></span>
+                  </div>
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a className="dropdown-item" href="#">Action</a></li>
@@ -89,9 +107,8 @@ export default function AdminHeader({ toggleSidebar }) {
                 >
                   <ul className="list-style-none">
                     <li>
-                      <div className="">
                         <a href="#" className="link border-top">
-                          <div className="d-flex no-block align-items-center p-10">
+                          <div className="d-flex align-items-center p-3">
                             <span
                               className="
                                 btn btn-success btn-circle
@@ -109,7 +126,7 @@ export default function AdminHeader({ toggleSidebar }) {
                           </div>
                         </a>
                         <a href="#" className="link border-top">
-                          <div className="d-flex no-block align-items-center p-10">
+                          <div className="d-flex align-items-center p-3">
                             <span
                               className="
                                 btn btn-info btn-circle
@@ -129,7 +146,7 @@ export default function AdminHeader({ toggleSidebar }) {
                           </div>
                         </a>
                         <a href="#" className="link border-top">
-                          <div className="d-flex no-block align-items-center p-10">
+                          <div className="d-flex align-items-center p-3">
                             <span
                               className="
                                 btn btn-primary btn-circle
@@ -147,7 +164,7 @@ export default function AdminHeader({ toggleSidebar }) {
                           </div>
                         </a>
                         <a href="#" className="link border-top">
-                          <div className="d-flex no-block align-items-center p-10">
+                          <div className="d-flex align-items-center p-3">
                             <span
                               className="
                                 btn btn-danger btn-circle
@@ -164,7 +181,6 @@ export default function AdminHeader({ toggleSidebar }) {
                             </div>
                           </div>
                         </a>
-                      </div>
                     </li>
                   </ul>
                 </ul>

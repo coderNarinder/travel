@@ -60,7 +60,7 @@ function VendorLayout() {
                                     <div className="comment-footer mt-3 text-center row">
                                         <div className="col-md-4">
                                             <div className='vendor-logo'>
-                                                <img src={vendor?.logo || ''} className='img-circle w-100 rounded-pill border shadow-sm' alt="Vendor Logo" />
+                                                <img src={vendor?.logo || ''} className='w-100 border' alt="Vendor Logo" />
                                             </div>
                                         </div>
                                         <div className="col-md-8 align-self-center">
