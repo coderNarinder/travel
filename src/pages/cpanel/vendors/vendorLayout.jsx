@@ -56,13 +56,11 @@ function VendorLayout() {
                         <div className="rounded-wrap tour-detail-left">
                             <div className="card">
                                 <div className="card-body">
-                                    {/* <img src={vendor?.banner || ''} className='w-100 rounded shadow' alt="Vendor Banner" /> */}
-                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/f9cxlacfjbuydsfrl4ke/Dubai%20Palm%20Jumeirah%2C%20Burj%20Al%20Arab%20%26%20Marina%20Boat%20Sightseeing%20Tour%20-%20Klook.jpg" className='w-100 rounded shadow' alt="Vendor Banner" />
+                                    <img src={vendor?.banner || ''} className='w-100 rounded shadow' alt="Vendor Banner" />
                                     <div className="comment-footer mt-3 text-center row">
                                         <div className="col-md-4">
                                             <div className='vendor-logo'>
-                                                {/* <img src={vendor?.logo || ''} className='img-circle w-100 rounded-pill border shadow-sm' alt="Vendor Logo" /> */}
-                                                <img src="https://seeklogo.com/images/V/virtuoso-travel-logo-9BB37B3FB3-seeklogo.com.png" alt="" className='img-circle w-100 p-2 rounded shadow-sm' />
+                                                <img src={vendor?.logo || ''} className='img-circle w-100 rounded-pill border shadow-sm' alt="Vendor Logo" />
                                             </div>
                                         </div>
                                         <div className="col-md-8 align-self-center">
