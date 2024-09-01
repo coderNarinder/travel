@@ -116,7 +116,8 @@ const CreateTour = () => {
     if (countryID) {
       getRequest(`v1/states?skip=0&limit=1000&country_id=${countryID}`)
         .then((res) => {
-          setState(res.data); 
+          setState(res.data);  
+          setValue('state',product?.state_id);  
         })
         .catch((err) => {
           console.log(err);
@@ -128,7 +129,8 @@ const CreateTour = () => {
     if (stateID) {
       getRequest(`v1/cities?skip=0&limit=1000&state_id=${stateID}`)
         .then((res) => {
-          setCity(res.data); 
+          setCity(res.data);  
+          setValue('city', product?.city_id); 
         })
         .catch((err) => {
           console.log(err);
@@ -143,6 +145,14 @@ const CreateTour = () => {
   useEffect(() => {
     getCity();
   }, [stateID, getCity]);
+
+
+  useEffect(() => {
+    setValue('country', product?.country_id); 
+    setValue('state', product?.state_id); 
+    setValue('city', product?.city_id); 
+  }, [country, state,city]);
+
 
   const getCategories = () => {
     getRequest("v1/category/listing?skip=0&limit=50&tree=1&parent=0")
@@ -168,6 +178,7 @@ const CreateTour = () => {
     getRequest("v1/countries?skip=0&limit=1000")
       .then((res) => {
         setCountry(res.data);
+        setValue('country', product?.country_id); 
       })
       .catch((err) => {
         console.log(err);
@@ -524,7 +535,7 @@ const CreateTour = () => {
                 </div>
               </div>
 
-              {translationFields.map((field, index) => (
+              {translationFields && translationFields.map((field, index) => (
                 <div className="accordion-item card" key={field.id}>
                   <h2 className="accordion-header" id={`generalInfo${index}`}>
                     <button
@@ -678,7 +689,7 @@ const CreateTour = () => {
                           }
                         >
                           <option value="">Select Country</option>
-                          {country.map((c) => (
+                          {country && country.map((c) => (
                             <option key={c.id} value={c.id}>
                               {c.name}
                             </option>
@@ -711,7 +722,7 @@ const CreateTour = () => {
                           }
                         >
                           <option value="">Select State</option>
-                          {state.map((c) => (
+                          {state && state.map((c) => (
                             <option key={c.id} value={c.id}>
                               {c.name}
                             </option>
@@ -742,7 +753,7 @@ const CreateTour = () => {
                          
                         >
                           <option value="">Select city</option>
-                          {city.map((c) => (
+                          {city && city.map((c) => (
                             <option key={c.id} value={c.id}>
                               {c.name}
                             </option>
@@ -1091,7 +1102,7 @@ const CreateTour = () => {
                 </h2>
                 <div id="categoryWrap" className="accordion-collapse collapse show" aria-labelledby="category">
                   <div className="card-body">
-                    {categories.map((cate) => (
+                    {categories && categories.map((cate) => (
                       <>
                         <div className="form-check" key={cate.id}>
                           <input
@@ -1180,7 +1191,7 @@ const CreateTour = () => {
                 </h2>
                 <div id="languageWrap" className="accordion-collapse collapse" aria-labelledby="language">
                   <div className="card-body">
-                    {languages.map((language, index) => (
+                    {languages && languages.map((language, index) => (
                       <div className="form-check" key={index}>
                         <input
                           type="checkbox"

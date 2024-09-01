@@ -33,13 +33,13 @@ const sidebarHeadings = [
     link: 'faq',
   },
   {
-    id: 5,
+    id: 6,
     heading: 'Admin Settings',
     icon: <i className="mdi mdi-settings"></i>,
     link: 'admin-setting',
   },
   {
-    id: 6,
+    id: 7,
     heading: 'Logout',
     icon: <i className="mdi mdi-logout"></i>,
     link: '/logout',
