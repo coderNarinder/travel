@@ -13,7 +13,8 @@ const Details = () => {
           <h5 className="card-title">Vendor Detail</h5>
           <br />
           <div className="card-body-vendor-banner">
-            {vendor?.banner && <img src={vendor.banner} alt="Vendor Banner" />}
+            {/* {vendor?.banner && <img src={vendor.banner} alt="Vendor Banner" />} */}
+            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/f9cxlacfjbuydsfrl4ke/Dubai%20Palm%20Jumeirah%2C%20Burj%20Al%20Arab%20%26%20Marina%20Boat%20Sightseeing%20Tour%20-%20Klook.jpg" alt="" />
           </div>
           <div className="col-md-8">
             <h3>{vendor?.name || 'Vendor Name'}</h3>

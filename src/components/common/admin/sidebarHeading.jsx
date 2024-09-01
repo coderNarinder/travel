@@ -28,6 +28,12 @@ const sidebarHeadings = [
   },
   {
     id: 5,
+    heading: 'FAQ',
+    icon: <i className="mdi mdi-book"></i>,
+    link: 'faq',
+  },
+  {
+    id: 5,
     heading: 'Admin Settings',
     icon: <i className="mdi mdi-settings"></i>,
     link: 'admin-setting',

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import AdminHeader from '../../components/common/admin/header';
+import AdminHeader from '../../components/common/admin/header/header';
 import AdminSidebar from '../../components/common/admin/sidebar';
 import { postRequest } from '../../service';
 import "./../../../public/admin/assets/css/style.min.css";
-import "./cpanel.css";
+import "./layout.css";
 
 const AdminLayout = () => { 
   const [isLogin, setIsLogin] = useState(false);
@@ -26,17 +26,26 @@ const AdminLayout = () => {
       });
   }, []);
 
+  // State to manage the layout type
+  const [isMiniSidebar, setIsMiniSidebar] = useState(false);
+
+  // Function to toggle the layout state
+  const toggleSidebar = () => {
+    setIsMiniSidebar(!isMiniSidebar);
+  };
+
   return (
-    <div 
+    <div
       id="main-wrapper"
       data-layout="vertical"
       data-navbarbg="skin5"
-      data-sidebartype="full"
+      data-sidebartype={isMiniSidebar ? 'mini-sidebar' : 'full'}
       data-sidebar-position="absolute"
       data-header-position="absolute"
       data-boxed-layout="full"
+      className={isMiniSidebar ? 'mini-sidebar' : ''}
     >
-      <AdminHeader />
+      <AdminHeader toggleSidebar={toggleSidebar} />
       <AdminSidebar />
       <div className="page-wrapper">
         {/* <div className="page-breadcrumb">

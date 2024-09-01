@@ -7,19 +7,18 @@ const AdminSidebar = () => {
       <aside className="left-sidebar" data-sidebarbg="skin5">
         <div className="navbar-header" data-logobg="skin5">
           <a className="navbar-brand" href="/cpanel">
-            <span className="logo-text ms-2">
+            <span className="logo-text">
+              <img
+                src="/admin/assets/images/logo-small.png"
+                alt="homepage"
+                className="light-small"
+              />
               <img
                 src="/admin/assets/images/logo-text.png"
                 alt="homepage"
-                className="light-logo"
+                className="light-logo ms-1"
               />
             </span>
-          </a>
-          <a
-            className="nav-toggler waves-effect waves-light d-block d-md-none"
-            href="#"
-          >
-            <i className="ti-menu ti-close"></i>
           </a>
         </div>
 

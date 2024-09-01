@@ -1,7 +1,7 @@
 import React from 'react';
-import userIcon from "./../../../assets/user.png";
+import userIcon from "./../../../../assets/user.png";
 
-export default function AdminHeader() {
+export default function AdminHeader({ toggleSidebar }) {
   return (
     <>
       <header className="topbar" data-navbarbg="skin5">
@@ -15,8 +15,7 @@ export default function AdminHeader() {
               <li className="nav-item d-none d-lg-block">
                 <a
                   className="nav-link sidebartoggler waves-effect waves-light"
-                  href="#"
-                  data-sidebartype="mini-sidebar"
+                  onClick={toggleSidebar}
                 >
                   <i className="mdi mdi-menu font-24"></i>
                 </a>

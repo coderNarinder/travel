@@ -55,12 +55,10 @@ const TourList = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="align-items-center row">
-                <div className="col-lg-8">
-                  <div className="mb-3 mb-lg-0">
-                    <h6 className="fs-16 mb-0">Showing {skip + 1} – {skip + records.length} of {total} results</h6>
-                  </div>
+                <div className="col-lg-7">
+                  <h6 className="fs-16 mb-0">Showing {skip + 1} – {skip + records.length} of {total} results</h6>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-5">
                   <div className="candidate-list-widgets">
                     <div className="row">
                       <div className="col-lg-6">
@@ -85,21 +83,20 @@ const TourList = () => {
               <div className="candidate-list">
                 {loading && 'Loading...'}
                 {records.map((record, index) => (
-                  <div className="candidate-list-box tour-card mt-4" key={index}>
+                  <div className="candidate-list-box tour-card mt-3" key={index}>
                     <div className="p-4 card-body">
                       <div className="align-items-center row">
-                        <div className="col-auto">
+                        <div className="col-lg-2">
                           <div className="candidate-list-images">
-                            <a href="#"><img src={record.thumbnail} alt={record.name} className="avatar-md img-thumbnail rounded-circle" /></a>
+                            <img src={record.thumbnail} alt={index} className="avatar-md img-thumbnail rounded-circle" />
                           </div>
                         </div>
                         <div className="col-lg-8">
                           <div className="candidate-list-content mt-3 mt-lg-0">
                             <h5 className="fs-19 mb-0">
-                              <a className="primary-link" href="#">{record.name}</a>
-                              <span className="badge bg-success ms-1"><i className="mdi mdi-star align-middle"></i>4.8</span>
+                              <span className="primary-link">{record.name}</span>
                             </h5>
-                            <p className="text-muted mb-2">{record.description ? record.description.slice(0, 300) : 'Tour details missing'}</p>
+                            <p className="text-muted mb-2">{record.description ? record.description.slice(0, 150) : 'Tour details missing'}...</p>
                             <ul className="list-inline mb-0 text-muted">
                               <li className="list-inline-item"><i className="mdi mdi-map-marker"></i> {record.address}</li>
                               {record.price_type !== 'adult' && (

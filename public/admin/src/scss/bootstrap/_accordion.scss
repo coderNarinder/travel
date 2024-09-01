@@ -11,7 +11,6 @@
   @include font-size($font-size-base);
   color: $accordion-button-color;
   background-color: $accordion-button-bg;
-  border: $accordion-border-width solid $accordion-border-color;
   @include border-radius(0);
   overflow-anchor: none;
   @include transition($accordion-transition);
@@ -80,11 +79,6 @@
       @include border-bottom-radius($accordion-border-radius);
     }
   }
-}
-
-.accordion-collapse {
-  border: solid $accordion-border-color;
-  border-width: 0 $accordion-border-width;
 }
 
 .accordion-body {

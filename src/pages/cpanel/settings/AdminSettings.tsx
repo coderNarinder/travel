@@ -109,22 +109,22 @@ export default function AdminSettings() {
               </div>
             </div>
             <div className="accordion-item card custom-card">
-              <h2 className="accordion-header" id="generalInfo0">
+              <h2 className="accordion-header" id="currencyHeader">
                 <button
                   className="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseLang0"
+                  data-bs-target="#collapseCurrency"
                   aria-expanded="true"
-                  aria-controls="collapseLang0"
+                  aria-controls="collapseCurrency"
                 >
                   Currency
                 </button>
               </h2>
               <div
-                id="collapseLang0"
+                id="collapseCurrency"
                 className="accordion-collapse collapse show"
-                aria-labelledby="generalInfo0"
+                aria-labelledby="currencyHeader"
               >
                 <div className="card-body">
                   <table className="table">
@@ -183,42 +183,42 @@ export default function AdminSettings() {
           </div>
           <div className="col-4">
             <div className="accordion-item card custom-card">
-              <h2 className="accordion-header" id="generalInfo0">
+              <h2 className="accordion-header" id="languageHeader">
                 <button
                   className="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseLang0"
+                  data-bs-target="#collapseLanguage"
                   aria-expanded="true"
-                  aria-controls="collapseLang0"
+                  aria-controls="collapseLanguage"
                 >
                   Languages
                 </button>
               </h2>
-              <div className="col-12">
-                <div className="row align-self-center p-3">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th className="text-left">Language</th>
-                        <th className="text-left">Selected</th>
-                        <th className="text-left">Primary</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {languages &&
-                        languages.map((lang, index) => (
-                          <tr key={index}>
-                            <td>
-                              <label
-                                className="form-check-label"
-                                htmlFor={lang?.language_name}
-                              >
-                                {lang?.language_name}
-                              </label>
-                            </td>
-                            <td>
-                              <div className="col-12">
+              <div id="collapseLanguage" className="accordion-collapse collapse show" aria-labelledby="languageHeader">
+                <div className="col-12">
+                  <div className="row align-self-center p-3">
+                    <table className="table m-0">
+                      <thead>
+                        <tr>
+                          <th className="text-left">Language</th>
+                          <th className="text-left">Selected</th>
+                          <th className="text-left">Primary</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {languages &&
+                          languages.map((lang, index) => (
+                            <tr key={index}>
+                              <td>
+                                <label
+                                  className="form-check-label"
+                                  htmlFor={lang?.language_name}
+                                >
+                                  {lang?.language_name}
+                                </label>
+                              </td>
+                              <td>
                                 <div className="form-check form-switch">
                                   <input
                                     className="form-check-input"
@@ -227,10 +227,8 @@ export default function AdminSettings() {
                                     id={lang?.language_name}
                                   />
                                 </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div className="col-12">
+                              </td>
+                              <td>
                                 <div className="form-check form-switch">
                                   <input
                                     className="form-check-input"
@@ -239,12 +237,12 @@ export default function AdminSettings() {
                                     id={`radio-${lang?.language_name}`}
                                   />
                                 </div>
-                              </div>
-                            </td>
-                          </tr>
-                        ))}
-                    </tbody>
-                  </table>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>

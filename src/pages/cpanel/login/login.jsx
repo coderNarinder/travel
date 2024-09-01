@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { loginFun } from './../../service';
+import { loginFun } from '../../../service';
+import "./login.css";
 
 const Login = () => {
   const {
@@ -16,6 +17,8 @@ const Login = () => {
     message: ''
   });
 
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
   const onSubmit = (data) => {
     loginFun(data).then((res) => {
       if (res.status === 1) {
@@ -26,7 +29,7 @@ const Login = () => {
         });
         localStorage.setItem('accessToken', res.accessToken);
         localStorage.setItem('user', JSON.stringify(res.data));
-        window.location.href = '/admin/dashboard';
+        window.location.href = '/cpanel';
       } else {
         setErrorMessage({
           has: true,
@@ -59,33 +62,44 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="formInputIcon mb-4">
                 <label htmlFor="email">Email</label>
-                <i className="fa fa-user"></i>
-                <input
-                  id="email"
-                  type="email"
-                  {...register('email', {
-                    required: 'Email is required',
-                    pattern: {
-                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                      message: 'Invalid email address'
-                    }
-                  })}
-                  placeholder="Enter Your Email Address"
-                />
-                {errors.email && <p>{errors.email.message}</p>}
+                <div className="form-element">
+                  <i className="fa fa-user"></i>
+                  <input
+                    id="email"
+                    type="email"
+                    {...register('email', {
+                      required: 'Email is required',
+                      pattern: {
+                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                        message: 'Invalid email address'
+                      }
+                    })}
+                    placeholder="Enter Your Email Address"
+                  />
+                </div>
+                {errors.email && <p className="form-error">{errors.email.message}</p>}
               </div>
               <div className="formInputIcon mb-3">
                 <label htmlFor="password">Password</label>
-                <i className="fa fa-key"></i>
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="******"
-                  {...register('password', {
-                    required: 'Password is required'
-                  })}
-                />
-                {errors.password && <p>{errors.password.message}</p>}
+                <div className="form-element password-container">
+                  <i className="fa fa-key"></i>
+                  <input
+                    id="password"
+                    type={passwordVisible ? 'text' : 'password'}
+                    placeholder="******"
+                    {...register('password', {
+                      required: 'Password is required'
+                    })}
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setPasswordVisible(!passwordVisible)}
+                  >
+                    <i className={`fa ${passwordVisible ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+                  </button>
+                </div>
+                {errors.password && <p className="form-error">{errors.password.message}</p>}
               </div>
               <div className="formBasicCheckbox">
                 <input type="checkbox" id="rememberMe" />
