@@ -19,7 +19,7 @@ const AdminLayout = () => {
         }
       })
       .catch(() => {
-        // Handle errors if necessary
+        window.location.href = '/cpanel/login';
       })
       .finally(() => {
         console.log("done");

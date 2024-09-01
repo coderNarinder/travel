@@ -55,6 +55,7 @@ const VendorEdit = () => {
             setValue('longitude', vendor.longitude);
             setValue('logo', vendor.logo);
             setValue('banner', vendor.banner);
+            setValue('logo', vendor.logo);
             setValue('country', vendor.country_id);
             setValue('state', vendor.state_id);
             setValue('city', vendor.city_id);
@@ -158,6 +159,26 @@ const VendorEdit = () => {
                                     {/* Other fields go here... */}
 
                                     <div className="form-group row">
+                                        <label htmlFor="Logo" className="col-sm-3 control-label col-form-label">
+                                            <span>Logo</span>
+                                        </label>
+                                        <div className="col-sm-9">
+                                            <UploadFile 
+                                                onUpload={handleImageUpload}
+                                                name="logo"
+                                                path="vendors/"
+                                                type="category"
+                                                val={watch("logo")}
+                                            />
+                                            <input 
+                                                type="hidden" 
+                                                {...register('logo', { required: "This field is required" })}
+                                            /> 
+                                            {errors.logo && <p className='text-danger text-right'>{errors.logo.message}</p>}
+                                        </div>
+                                    </div>
+
+                                    <div className="form-group row">
                                         <label htmlFor="banner" className="col-sm-3 control-label col-form-label">
                                             <span>Banner</span>
                                         </label>
@@ -194,7 +215,7 @@ const VendorEdit = () => {
                                         </h2>
                                         <div id="categoryWrap" className="accordion-collapse collapse show" aria-labelledby="category">
                                             <div className="card-body">
-                                                {categories.map(cate => (
+                                                {categories && categories.map(cate => (
                                                     <div className="form-check" key={cate.id}>
                                                         <input
                                                             type="checkbox"

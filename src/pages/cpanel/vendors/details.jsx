@@ -25,11 +25,21 @@ const Details = () => {
             </div>
             <div className="row mb-1">
               <div className="col-md-3">Categories</div>
-              <div className="col-md-9">{vendor?.categories.length ? vendor.categories.join(', ') : 'coming soon'}</div>
+              <div className="col-md-9">{vendor?.categories && vendor?.categories?.length > 0 && vendor?.categories.map((cate) => (
+                <span className='badge badge-dark text-primary' key={cate.id}>{cate.name}</span>
+              ))}</div>
             </div>
             <div className="row mb-1">
               <div className="col-md-3">Country</div>
               <div className="col-md-9">{vendor?.country ? vendor.country.nicename : 'coming soon'}</div>
+            </div>
+            <div className="row mb-1">
+              <div className="col-md-3">State</div>
+              <div className="col-md-9">{vendor?.state ? vendor.state.name : 'coming soon'}</div>
+            </div>
+            <div className="row mb-1">
+              <div className="col-md-3">City</div>
+              <div className="col-md-9">{vendor?.city ? vendor.city.name : 'coming soon'}</div>
             </div>
             <div className="row mb-1">
               <div className="col-md-3">Longitude</div>
