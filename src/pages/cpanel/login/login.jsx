@@ -45,11 +45,11 @@ const Login = () => {
       <div className="auth-full-page-content">
         <div className="loginBody auth-content my-auto">
           <div className="loginHdr text-center">
-            <div className="loginLogo text-center">
+            {/* <div className="loginLogo text-center">
               <Link to="/" className="d-block auth-logo"></Link>
-            </div>
-            <h3 className="mb-0">Login</h3>
-            <p className="mt-2">
+            </div> */}
+            <h3>Login</h3>
+            <p>
               Please enter your details below to Sign In
             </p>
           </div>
@@ -107,7 +107,7 @@ const Login = () => {
               </div>
               <div className="formBtn text-center mt-3">
                 <button
-                  className="btn btn-primary waves-effect waves-light d-block w-100"
+                  className="btn btn-primary waves-effect waves-light"
                   type="submit"
                 >
                   Submit

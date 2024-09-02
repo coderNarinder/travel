@@ -31,7 +31,7 @@ const OnSetupLoad = () => {
   console.log(client, loading);
 
   return (
-    <div className="main">
+    <div className="onload_main">
       <header className="header-onsetup">
         <span className="header-logo">
           <img src="https://fivvia.com/assets/images/logo_small.svg" alt="logo" />

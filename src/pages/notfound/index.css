@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.not-found * {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
 .not-found { 
     font-size: 100%;
     line-height: 1.5;
@@ -27,11 +33,13 @@
 }
 .not-found .button:hover {color: #fff;background-color: #007aff;}
 .not-found h1 {
+    margin: 0;
     margin-top: auto;
     opacity: 0.15;
     color: #000000;
     text-align: center;
     font-size: 15em;
+    line-height: 1.25;
     font-weight: 200;
     text-shadow: #000000 1px 1px, #000000 2px 2px, #111111 3px 3px, #111111 4px 4px, #222222 5px 5px, #222222 6px 6px, #333333 7px 7px, #333333 8px 8px, #444444 9px 9px, #444444 10px 10px, #555555 11px 11px, #555555 12px 12px, #666666 13px 13px, #666666 14px 14px, #777777 15px 15px, #777777 16px 16px, #888888 17px 17px, #888888 18px 18px, #999999 19px 19px, #999999 20px 20px, #AAAAAA 21px 21px, #AAAAAA 22px 22px, #BBBBBB 23px 23px, #BBBBBB 24px 24px, #CCCCCC 25px 25px, #CCCCCC 26px 26px, #DDDDDD 27px 27px;
 }
@@ -39,8 +47,11 @@
   font-size: 2em;
   text-align: center;
   font-weight: 300;
+  margin: 0;
 }
 .not-found .poweredby {
     font-size: 10px;
+    line-height: 1.25;
     margin-top: auto;
+    padding: 10px 0px;
 }

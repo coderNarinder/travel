@@ -153,21 +153,17 @@ const TourListing = () => {
                         <div className="align-items-center row">
                           <div className="col-auto">
                             <div className="candidate-list-images">
-                              <a href="#">
                                 <img
-                                  src={record?.thumbnail}
+                                  src={record?.thumbnail ? record?.thumbnail : 'https://via.placeholder.com/400'}
                                   alt=""
                                   className="avatar-md img-thumbnail rounded-circle"
                                 />
-                              </a>
                             </div>
                           </div>
-                          <div className="col-lg-6">
+                          <div className="col-lg-5">
                             <div className="candidate-list-content mt-3 mt-lg-0">
                               <h5 className="fs-19 mb-0">
-                                <a className="primary-link" href="#">
-                                  {record?.name}
-                                </a>
+                                {record?.name}
                               </h5>
                               <p className="text-muted mb-2">Project Manager</p>
                               <ul className="list-inline mb-0 text-muted">
@@ -190,18 +186,18 @@ const TourListing = () => {
                               </ul>
                             </div>
                           </div>
-                          <div className="col-lg-4 tour-tags-wrap">
+                          <div className="col-lg-5 tour-tags-wrap">
                             <div className="mt-2 mt-lg-0 d-flex flex-wrap align-items-stretch gap-1">
                               {record?.category.map((cate, index) => (
                                 <span
-                                  className="badge bg-soft-secondary fs-14"
+                                  className="badge"
                                   key={index}
                                 >
                                   {cate}
                                 </span>
                               ))}
                               <Link
-                                className="btn btn-primary pull-right"
+                                className="btn btn-primary pull-right px-3"
                                 to={`/cpanel/vendor-detail/${record?.vendor_id}/tour/${record?.id}/edit`}
                               >
                                 Edit
@@ -221,7 +217,29 @@ const TourListing = () => {
                 </div>
               </div>
             </div>
-            
+            <div className="row">
+              <div className="col-md-12">
+                <nav aria-label="Page navigation">
+                  <ul className="pagination justify-content-center mt-4">
+                    <li className="page-item">
+                      <a className="page-link" href="#">Previous</a>
+                    </li>
+                    <li className="page-item">
+                      <a className="page-link" href="#">1</a>
+                    </li>
+                    <li className="page-item">
+                      <a className="page-link" href="#">2</a>
+                    </li>
+                    <li className="page-item">
+                      <a className="page-link" href="#">3</a>
+                    </li>
+                    <li className="page-item">
+                      <a className="page-link" href="#"> &nbsp; Next &nbsp; </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
           </div>
         </div>
       </div>

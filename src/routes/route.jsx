@@ -1,115 +1,200 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import HomeLayout from '../pages/home/layout';
-import HomePage from '../pages/home/homepage';
-import NotFound from '../pages/notfound';
-import ActivityPage from '../pages/activities/ActivityPage';
-import TrackingPage from '../pages/tracking/TrackingPage';
-import AdminLayout from '../pages/cpanel/layout';
-import Dashboard from '../pages/cpanel';
-import Login from '../pages/cpanel/login/login';
-import CreateTour from '../pages/cpanel/tours';
-import VendorListing from '../pages/cpanel/vendors';
-import CreateVendor from '../pages/cpanel/vendors/create';
-import VendorDetail from '../pages/cpanel/vendors/details';
-import VendorLayout from '../pages/cpanel/vendors/vendorLayout';
-import TourList from '../pages/cpanel/vendors/tours';
-import AdminSettings from '../pages/cpanel/settings/AdminSettings';
-import TourListing from '../pages/cpanel/tours/listing';
-import Subscription from '../pages/cpanel/subscriptions';
-import VendorEdit from '../pages/cpanel/vendors/edit';
-import FAQ from '../pages/cpanel/faq';
-import Orders from '../pages/cpanel/orders';
-import Users from '../pages/cpanel/users';
-import BusinessProfile from '../pages/cpanel/business-profile';
+const HomeLayout = lazy(() => import('../pages/home/layout'));
+const HomePage = lazy(() => import('../pages/home/homepage'));
+const NotFound = lazy(() => import('../pages/notfound'));
+const ActivityPage = lazy(() => import('../pages/activities/ActivityPage'));
+const TrackingPage = lazy(() => import('../pages/tracking/TrackingPage'));
+const AdminLayout = lazy(() => import('../pages/cpanel/layout'));
+const Dashboard = lazy(() => import('../pages/cpanel'));
+const Login = lazy(() => import('../pages/cpanel/login/login'));
+const CreateTour = lazy(() => import('../pages/cpanel/tours'));
+const VendorListing = lazy(() => import('../pages/cpanel/vendors'));
+const CreateVendor = lazy(() => import('../pages/cpanel/vendors/create'));
+const VendorDetail = lazy(() => import('../pages/cpanel/vendors/details'));
+const VendorLayout = lazy(() => import('../pages/cpanel/vendors/vendorLayout'));
+const TourList = lazy(() => import('../pages/cpanel/vendors/tours'));
+const AdminSettings = lazy(() => import('../pages/cpanel/settings/AdminSettings'));
+const TourListing = lazy(() => import('../pages/cpanel/tours/listing'));
+const Subscription = lazy(() => import('../pages/cpanel/subscriptions'));
+const VendorEdit = lazy(() => import('../pages/cpanel/vendors/edit'));
+const FAQ = lazy(() => import('../pages/cpanel/faq'));
+const Orders = lazy(() => import('../pages/cpanel/orders'));
+const Users = lazy(() => import('../pages/cpanel/users'));
+const BusinessProfile = lazy(() => import('../pages/cpanel/business-profile'));
+
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomeLayout />,
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <HomeLayout />
+            </Suspense>
+        ),
         children: [
             {
                 path: '',
-                element: <HomePage />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <HomePage />
+                    </Suspense>
+                )
             }
         ]
     },
     {
         path: '/tour/:id/detail',
-        element: <ActivityPage />
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <ActivityPage />
+            </Suspense>
+        )
     },
     {
         path: '/tracking',
-        element: <TrackingPage />
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <TrackingPage />
+            </Suspense>
+        )
     },
     {
         path: '/cpanel/login',
-        element: <Login />
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <Login />
+            </Suspense>
+        )
     },
     {
         path: "/cpanel",
-        element: <AdminLayout />,
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <AdminLayout />
+            </Suspense>
+        ),
         children: [
             {
                 path: '/cpanel',
-                element: <Dashboard />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Dashboard />
+                    </Suspense>
+                )
             },
             {
                 path: 'admin-setting',
-                element: <AdminSettings />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <AdminSettings />
+                    </Suspense>
+                )
             },
             {
                 path: 'profile',
-                element: <BusinessProfile />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <BusinessProfile />
+                    </Suspense>
+                )
             },
             {
                 path: 'users',
-                element: <Users />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Users />
+                    </Suspense>
+                )
             },
             {
                 path: 'orders',
-                element: <Orders />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Orders />
+                    </Suspense>
+                )
             },
             {
                 path: 'faq',
-                element: <FAQ />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <FAQ />
+                    </Suspense>
+                )
             },
             {
                 path: 'subscription',
-                element: <Subscription />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Subscription />
+                    </Suspense>
+                )
             },
             {
                 path: '/cpanel/tours/listing',
-                element: <TourListing />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <TourListing />
+                    </Suspense>
+                )
             },
             {
                 path: '/cpanel/vendor/listing',
-                element: <VendorListing />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <VendorListing />
+                    </Suspense>
+                )
             },
             {
                 path: '/cpanel/vendor/create',
-                element: <CreateVendor />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <CreateVendor />
+                    </Suspense>
+                )
             },
             {
                 path: '/cpanel/vendor-detail/:slug/tour/:id/edit',
-                element: <CreateTour />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <CreateTour />
+                    </Suspense>
+                )
             },
             {
                 path: "/cpanel/vendor-detail",
-                element: <VendorLayout />,
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <VendorLayout />
+                    </Suspense>
+                ),
                 children: [
                     {
                         path: '/cpanel/vendor-detail/:slug/info',
-                        element: <VendorDetail />
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <VendorDetail />
+                            </Suspense>
+                        )
                     },
                     {
                         path: '/cpanel/vendor-detail/:slug/edit',
-                        element: <VendorEdit />
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <VendorEdit />
+                            </Suspense>
+                        )
                     },
                     {
                         path: '/cpanel/vendor-detail/:slug/tours',
-                        element: <TourList />
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <TourList />
+                            </Suspense>
+                        )
                     }
                 ]
             }
@@ -117,7 +202,11 @@ const router = createBrowserRouter([
     },
     {
         path: "*",
-        element: <NotFound />,
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <NotFound />
+            </Suspense>
+        ),
     }
 ]);
 

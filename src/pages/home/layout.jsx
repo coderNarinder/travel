@@ -4,11 +4,13 @@ import Footer from '../../components/user/footer/Footer';
 
 const HomeLayout = () => {
   return (
-    <div className="lt_container">
-      <Header />
-        <Outlet />
-      <Footer />
-    </div>
+    <>
+      <div className="wrapper ovh">
+        <Header />
+          <Outlet />
+        <Footer />
+      </div>
+    </>
   );
 }
 
