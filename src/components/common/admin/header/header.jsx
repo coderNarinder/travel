@@ -52,7 +52,7 @@ export default function AdminHeader({ toggleSidebar }) {
                 <Link to="/cpanel/admin-setting" className="nav-link">
                   <div className="notification-info">
                     <i className="mdi mdi-settings font-24"></i>
-                    <span class="count-notification"></span>
+                    <span className="count-notification"></span>
                   </div>
                 </Link>
               </li>
@@ -67,7 +67,7 @@ export default function AdminHeader({ toggleSidebar }) {
                 >
                   <div className="notification-info">
                     <i className="mdi mdi-bell-outline font-24"></i>
-                    <span class="count-notification"></span>
+                    <span className="count-notification"></span>
                   </div>
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">

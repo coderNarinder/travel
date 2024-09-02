@@ -144,7 +144,7 @@ const TourListing = () => {
                   </div>
                 </div>
                 <div className="candidate-list">
-                  {/* {records && records.map((record, index) => (
+                   {records && records.map((record, index) => (
                     <div
                       className="candidate-list-box custom-card tour-card mt-4"
                       key={index}
@@ -216,52 +216,12 @@ const TourListing = () => {
                         </div>
                       </div>
                     </div>
-                  )} */}
+                  ))}  
+
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="mt-4 pt-2 col-lg-12">
-                <nav aria-label="Page navigation example">
-                  <ul className="pagination job-pagination mb-0 justify-content-center">
-                    <li className="page-item disabled">
-                      <a
-                        className="page-link"
-                        tabIndex={-1}
-                        href="#"
-                      >
-                        <i className="mdi mdi-chevron-double-left fs-15"></i>
-                      </a>
-                    </li>
-                    <li className="page-item active">
-                      <a className="page-link" href="#">
-                        1
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        2
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        3
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        4
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        <i className="mdi mdi-chevron-double-right fs-15"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

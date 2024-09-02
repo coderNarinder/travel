@@ -38,7 +38,7 @@ const TagSection = ({ type, name, register }) => {
 
   const saveTags = () => {
     const data = watch('translations').filter((t) => t?.name === '');
-    if (data?.length === 0) {
+    if (data && data?.length === 0) {
       setLoading(true);
       postRequest(`v1/tags/store`, {
         translations: watch('translations'),
@@ -78,7 +78,7 @@ const TagSection = ({ type, name, register }) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredRecords = records?.filter((record) =>
+  const filteredRecords = records && records?.filter((record) =>
     record.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -92,7 +92,7 @@ const TagSection = ({ type, name, register }) => {
         onChange={handleSearchChange}
       />
       <div className="tags-wrap mb-2">
-        {filteredRecords.map((checkbox) => (
+        {filteredRecords && filteredRecords.map((checkbox) => (
           <div className="form-check" key={checkbox.id}>
             <input
               type="checkbox"
@@ -112,34 +112,34 @@ const TagSection = ({ type, name, register }) => {
       </button>
       {showModal && (
         <Popup title={`Add New ${type}`} show={showModal} onClose={handleCloseModal} onSave={handleSaveChanges}>
-          {translationFields.map((_field, index) => (
-            <div className="form-group row" key={index}>
-              <div className="col-sm-10">
-                <Controller
-                  control={control}
-                  name={`translations.${index}.name`}
-                  render={({ field }) => (
-                    <input
-                      {...field}
-                      placeholder="Tag Name"
-                      className="form-control"
-                      required
-                    />
-                  )}
-                />
-              </div>
-              <div className="col-sm-2">
-                {translationFields.length === index + 1 ? (
-                  <button className="btn btn-primary" type="button" onClick={() => appendTranslation({ name: '' })}>
-                    +
-                  </button>
-                ) : (
-                  <button className="btn btn-primary" type="button" onClick={() => removeTranslation(index)}>
-                    -
-                  </button>
-                )}
-              </div>
-            </div>
+          {translationFields && translationFields.map((_field, index) => (
+           <> <div className="form-group row" key={index}>
+           <div className="col-sm-10">
+             <Controller
+               control={control}
+               name={`translations.${index}.name`}
+               render={({ field }) => (
+                 <input
+                   {...field}
+                   placeholder="Tag Name"
+                   className="form-control"
+                   required
+                 />
+               )}
+             />
+           </div>
+           <div className="col-sm-2">
+             {translationFields.length === index + 1 ? (
+               <button className="btn btn-primary" type="button" onClick={() => appendTranslation({ name: '' })}>
+                 +
+               </button>
+             ) : (
+               <button className="btn btn-primary" type="button" onClick={() => removeTranslation(index)}>
+                 -
+               </button>
+             )}
+           </div>
+         </div></>
           ))}
           <div className="modal-footer">
             <button type="button" onClick={handleSaveChanges} className="btn btn-primary">

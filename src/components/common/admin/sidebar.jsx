@@ -25,8 +25,8 @@ const AdminSidebar = () => {
         <div className="scroll-sidebar">
           <nav className="sidebar-nav">
             <ul id="sidebarnav" className="pt-4">
-              {sidebarHeadings.map((menu) => (
-                <AdminMenu key={menu.id} menuList={menu} />
+              {sidebarHeadings.map((menu,index) => (
+                <AdminMenu key={index} menuList={menu} />
               ))}
             </ul>
           </nav>

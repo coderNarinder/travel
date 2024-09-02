@@ -113,7 +113,7 @@ function VendorLayout() {
                                     </div>
                                     <div className="text w-100 text-end">
                                         <h4>Tours</h4>
-                                        <span>800+ tours</span>
+                                        <span>{vendor?.products_count}+ tours</span>
                                     </div>
                                 </Link>
                                 <Link to={`/cpanel/vendor-detail/${slug}/orders`} className={`btn btn-tertiary w-100 ${isActive(`/cpanel/vendor-detail/${slug}/orders`) ? 'btn-active' : ''}`}>
@@ -122,7 +122,7 @@ function VendorLayout() {
                                     </div>
                                     <div className="text w-100 text-end">
                                         <h4>Orders</h4>
-                                        <span>800+ orders</span>
+                                        <span>0+ orders</span>
                                     </div>
                                 </Link>
                             </div>

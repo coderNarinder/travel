@@ -19,7 +19,7 @@ const AdminLayout = () => {
         }
       })
       .catch(() => {
-        // Handle errors if necessary
+        window.location.href = '/cpanel/login';
       })
       .finally(() => {
         console.log("done");
@@ -47,27 +47,7 @@ const AdminLayout = () => {
     >
       <AdminHeader toggleSidebar={toggleSidebar} />
       <AdminSidebar />
-      <div className="page-wrapper">
-        {/* <div className="page-breadcrumb">
-          <div className="row">
-            <div className="col-12 d-flex no-block align-items-center justify-content-between">
-              <h4 className="page-title">Dashboard</h4>
-              <div className="ms-5 text-end">
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <a href="#">Home</a>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <button type="button" className="btn btn-primary ms-auto" disabled>Save Changes</button>
-            </div>
-          </div>
-        </div> */}
+      <div className="page-wrapper"> 
         <Outlet />
         <footer className="footer text-center">
           All Rights Reserved by Fivvia. Designed and Developed by&nbsp;

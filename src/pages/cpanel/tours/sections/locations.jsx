@@ -135,20 +135,20 @@ const Locations = ({ handlePickup, addressIds }) => {
         onChange={handleSearchChange}
       />
       <div className="tags-wrap mb-2">
-        {filteredRecords && filteredRecords.map((checkbox) => (
-          <div className="form-check" key={checkbox.id}>
-            <input
-              type="checkbox"
-              id={checkbox.id.toString()}
-              className="form-check-input" 
-              checked={addressIds.includes(checkbox.id.toString())}
-              onChange={(e) => handlePickupChange(e, checkbox)} 
-              value={checkbox.id.toString()}
-            />
-            <label className="form-check-label mb-0" htmlFor={checkbox.id.toString()}>
-              {checkbox.title}
-            </label>
-          </div>
+        {filteredRecords && filteredRecords.map((checkbox,index) => (
+         <> <div className="form-check" key={index}>
+         <input
+           type="checkbox"
+           id={`checkbox-pickup-address-${index}`}
+           className="form-check-input" 
+           checked={addressIds.includes(checkbox.id.toString())}
+           onChange={(e) => handlePickupChange(e, checkbox)} 
+           value={checkbox.id.toString()}
+         />
+         <label className="form-check-label mb-0" htmlFor={`checkbox-pickup-address-${index}`}>
+           {checkbox.title}
+         </label>
+       </div></>
         ))}
       </div>
       <button type="button" className="btn btn-primary btn-align-right" onClick={handleOpenModal}>
