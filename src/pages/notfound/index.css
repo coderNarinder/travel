@@ -12,10 +12,10 @@
 }
 .not-found .button {
     color: #fff;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 300;
-    margin: 30px auto 2rem;
-    border-radius: 3px;
+    margin: 18px auto 2rem;
+    border-radius: 4px;
     position: relative;
     padding: 0.5em 1.2em;
     text-decoration: none;

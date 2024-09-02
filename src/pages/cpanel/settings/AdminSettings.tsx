@@ -35,9 +35,9 @@ export default function AdminSettings() {
       <form className="form-horizontal">
         <div className="row">
           <div className="col-12">
-            <h3 className="card-title mb-2">Cpanel Settings</h3>
+            <h3 className="card-title mb-2">Admin Settings</h3>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-8 p-0">
             <div className="accordion-item card custom-card">
               <h2 className="accordion-header" id="generalInfoTop">
                 <button
@@ -142,8 +142,9 @@ export default function AdminSettings() {
                           <tr key={index}>
                             <td>{currency.currency_name}</td>
                             <td>{currency?.symbol}</td>
-                            <td>
+                            <td width="250">
                               <input
+                                className="form-control"
                                 type="number"
                                 value={currency.exchange_rate}
                               />
@@ -181,7 +182,7 @@ export default function AdminSettings() {
               </div>
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-4 p-0">
             <div className="accordion-item card custom-card">
               <h2 className="accordion-header" id="languageHeader">
                 <button

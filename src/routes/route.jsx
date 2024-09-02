@@ -20,6 +20,9 @@ import TourListing from '../pages/cpanel/tours/listing';
 import Subscription from '../pages/cpanel/subscriptions';
 import VendorEdit from '../pages/cpanel/vendors/edit';
 import FAQ from '../pages/cpanel/faq';
+import Orders from '../pages/cpanel/orders';
+import Users from '../pages/cpanel/users';
+import BusinessProfile from '../pages/cpanel/business-profile';
 
 const router = createBrowserRouter([
     {
@@ -55,6 +58,18 @@ const router = createBrowserRouter([
             {
                 path: 'admin-setting',
                 element: <AdminSettings />
+            },
+            {
+                path: 'profile',
+                element: <BusinessProfile />
+            },
+            {
+                path: 'users',
+                element: <Users />
+            },
+            {
+                path: 'orders',
+                element: <Orders />
             },
             {
                 path: 'faq',

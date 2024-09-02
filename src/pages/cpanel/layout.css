@@ -9,10 +9,10 @@ body {
 .badge {
     padding: 6px 10px;
     font-weight: 600;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.10);
-    -moz-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.10);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.10);
+    -moz-box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.10);
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.10);
 }
 .badge-primary {
     color: #ffffff;
@@ -124,7 +124,7 @@ a {
 .myIcon {
     width: 50px;
     height: 50px;
-    border: 1px solid #edf2f9;
+    border: 1px solid #e4efff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,7 +152,7 @@ a {
 .rightContentWrapper .col .bg-dark {
     display: flex;
     position: relative;
-    border-radius: 6px;
+    border-radius: 8px;
     flex-direction: row;
     justify-content: space-between;
     padding: 18px !important;
@@ -382,6 +382,9 @@ a.sidebar-link.waves-effect.waves-dark.sidebar-link:hover {
 .mini-sidebar .topbar {
     margin-left: 88px;
 }
+.form-group label {
+    text-transform: capitalize;
+}
 .notification-info {
     position: relative;
     animation: swing 5s infinite linear;
@@ -399,6 +402,16 @@ a.sidebar-link.waves-effect.waves-dark.sidebar-link:hover {
     text-align: center;
     line-height: 6px;
     right: 0;
+}
+.footer {
+    padding: 0px 20px;
+}
+.faq-card .accordion-item {
+    margin-bottom: 0px;
+    border-bottom: 1px solid #f8f8f8;
+}
+.faq-card .accordion-item .accordion-button {
+    font-weight: 500;
 }
 /* @keyframes swing {
     0% {

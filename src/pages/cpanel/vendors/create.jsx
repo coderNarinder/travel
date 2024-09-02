@@ -326,7 +326,7 @@ const CreateVendor = () => {
                                 <h5 className="card-title">Other Details</h5>
                                 <br />
                                 <div className="form-group row">
-                                    <h6>Category</h6>
+                                    <h5>Category</h5>
                                     <div className="col-md-12">
                                         <div className="form-check mr-sm-2">
                                             <input
@@ -335,7 +335,7 @@ const CreateVendor = () => {
                                                 id="customControlAutosizing1"
                                             />
                                             <label
-                                                className="form-check-label mb-0"
+                                                className="form-check-label mb-1"
                                                 htmlFor="customControlAutosizing1"
                                             >
                                                 First One
@@ -348,7 +348,7 @@ const CreateVendor = () => {
                                                 id="customControlAutosizing2"
                                             />
                                             <label
-                                                className="form-check-label mb-0"
+                                                className="form-check-label mb-1"
                                                 htmlFor="customControlAutosizing2"
                                             >
                                                 Second One
@@ -361,7 +361,7 @@ const CreateVendor = () => {
                                                 id="customControlAutosizing3"
                                             />
                                             <label
-                                                className="form-check-label mb-0"
+                                                className="form-check-label mb-1"
                                                 htmlFor="customControlAutosizing3"
                                             >
                                                 Third One

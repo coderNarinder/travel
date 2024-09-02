@@ -1,4 +1,16 @@
 import React from 'react'
+import OrdersList from '../../components/orderlist';
+const orders = [
+  { id: '#JH2033', name: 'Emily Arnold', date: '22/06/2022', total: '$600', status: 'Pending', method: 'Paypal', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' },
+  { id: '#MK4433', name: 'Mark Doe', date: '14/07/2022', total: '$700', status: 'Success', method: 'Visa', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/4.jpg' },
+  { id: '#MD4578', name: 'Mark Smith', date: '28/08/2022', total: '$800', status: 'Cancel', method: 'Credit Card', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/7.jpg' },
+  { id: '#DD1048', name: 'Mike Wood', date: '13/04/2022', total: '$880', status: 'Pending', method: 'Mastercard', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' },
+  { id: '#JH2033', name: 'Emily Arnold', date: '22/06/2022', total: '$600', status: 'Success', method: 'Paypal', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/3.jpg' },
+  { id: '#MK4433', name: 'John Doe', date: '14/07/2022', total: '$700', status: 'Cancel', method: 'Visa', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' },
+  { id: '#MD4578', name: 'Mark Smith', date: '28/08/2022', total: '$800', status: 'Success', method: 'Credit Card', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/7.jpg' },
+  { id: '#DD1048', name: 'Mike Wood', date: '13/04/2022', total: '$880', status: 'Cancel', method: 'Mastercard', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/4.jpg' },
+  { id: '#MD4578', name: 'Emily Arnold', date: '28/08/2022', total: '$800', status: 'Pending', method: 'Visa', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' }
+];
 
 const Dashboard = () => {
     return (
@@ -15,7 +27,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                           <h5 className="mb-0">2540</h5>
-                          <small className="font-light">Total Users</small>
+                          <a href="/cpanel/users" className="font-light">Total Users</a>
                         </div>
                       </div>
                     </div>
@@ -26,7 +38,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                           <h5 className="mb-0">120</h5>
-                          <small className="font-light">New Users</small>
+                          <a href="/cpanel/users" className="font-light">New Users</a>
                         </div>
                       </div>
                     </div>
@@ -37,7 +49,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                             <h5 className="mb-0">9540</h5>
-                            <small className="font-light">Total Orders</small>
+                            <a href="/cpanel/orders" className="font-light">Total Orders</a>
                         </div>
                       </div>
                     </div>
@@ -48,7 +60,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                           <h5 className="mb-0">100</h5>
-                          <small className="font-light">Pending Orders</small>
+                          <a href="/cpanel/orders" className="font-light">Pending Orders</a>
                         </div>
                       </div>
                     </div>
@@ -59,7 +71,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                             <h5 className="mb-0">8540</h5>
-                            <small className="font-light">Online Orders</small>
+                            <a href="/cpanel/orders" className="font-light">Online Orders</a>
                         </div>
                       </div>
                     </div>
@@ -69,359 +81,7 @@ const Dashboard = () => {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <div className="card custom-card m-0">
-                  <div className="p-3 custom-card-header"><span>Newest Orders</span></div>
-                  <div className="chart-holder">
-                    <div className="table-responsive">
-                      <table className="table table-styled mb-0">
-                        <thead>
-                          <tr>
-                            <th>
-                              <div className="checkbox">
-                                <input id="checkbox1" type="checkbox" />
-                                <label htmlFor="checkbox1"></label>
-                              </div>
-                            </th>
-                            <th>Order ID</th>
-                            <th>Billing Name</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                            <th>Payment Status</th>
-                            <th>Payment Method</th>
-                            <th>View Details</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox2" type="checkbox" />
-        <label htmlFor="checkbox2"></label>
-      </div>
-    </td>
-    <td>#JH2033</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg"
-          alt=""
-        />
-        <span className="ml-2">Emily Arnold</span>
-      </span>
-    </td>
-    <td>22/06/2022</td>
-    <td>$600</td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="Pending">
-        Pending
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-paypal"></i>
-        <span className="ml-2">Paypal</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox3" type="checkbox" />
-        <label htmlFor="checkbox3"></label>
-      </div>
-    </td>
-    <td>#MK4433</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/4.jpg"
-          alt=""
-        />
-        <span className="ml-2">Mark Doe</span>
-      </span>
-    </td>
-    <td>14/07/2022</td>
-    <td>$700</td>
-    <td>
-      <label className="mb-0 badge badge-success" title="Success">
-        Success
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-visa"></i>
-        <span className="ml-2">Visa</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox4" type="checkbox" />
-        <label htmlFor="checkbox4"></label>
-      </div>
-    </td>
-    <td>#MD4578</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/7.jpg"
-          alt=""
-        />
-        <span className="ml-2">Mark Smith</span>
-      </span>
-    </td>
-    <td>28/08/2022</td>
-    <td>$800</td>
-    <td>
-      <label className="mb-0 badge badge-danger" title="Cancel">
-        Cancel
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fas fa-credit-card"></i>
-        <span className="ml-2">Credit Card</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox5" type="checkbox" />
-        <label htmlFor="checkbox5"></label>
-      </div>
-    </td>
-    <td>#DD1048</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg"
-          alt=""
-        />
-        <span className="ml-2">Mike Wood</span>
-      </span>
-    </td>
-    <td>13/04/2022</td>
-    <td>$880</td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="Pending">
-        Pending
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-mastercard"></i>
-        <span className="ml-2">Mastercard</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox6" type="checkbox" />
-        <label htmlFor="checkbox6"></label>
-      </div>
-    </td>
-    <td>#JH2033</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/3.jpg"
-          alt=""
-        />
-        <span className="ml-2">Emily Arnold</span>
-      </span>
-    </td>
-    <td>22/06/2022</td>
-    <td>$600</td>
-    <td>
-      <label className="mb-0 badge badge-success" title="Success">
-        Success
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-paypal"></i>
-        <span className="ml-2">Paypal</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox7" type="checkbox" />
-        <label htmlFor="checkbox7"></label>
-      </div>
-    </td>
-    <td>#MK4433</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg"
-          alt=""
-        />
-        <span className="ml-2">John Doe</span>
-      </span>
-    </td>
-    <td>14/07/2022</td>
-    <td>$700</td>
-    <td>
-      <label className="mb-0 badge badge-danger" title="Cancel">
-        Cancel
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-visa"></i>
-        <span className="ml-2">Visa</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox8" type="checkbox" />
-        <label htmlFor="checkbox8"></label>
-      </div>
-    </td>
-    <td>#MD4578</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/7.jpg"
-          alt=""
-        />
-        <span className="ml-2">Mark Smith</span>
-      </span>
-    </td>
-    <td>28/08/2022</td>
-    <td>$800</td>
-    <td>
-      <label className="mb-0 badge badge-success" title="Success">
-        Success
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fas fa-credit-card"></i>
-        <span className="ml-2">Credit Card</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox9" type="checkbox" />
-        <label htmlFor="checkbox9"></label>
-      </div>
-    </td>
-    <td>#DD1048</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/4.jpg"
-          alt=""
-        />
-        <span className="ml-2">Mike Wood</span>
-      </span>
-    </td>
-    <td>13/04/2022</td>
-    <td>$880</td>
-    <td>
-      <label className="mb-0 badge badge-danger" title="Cancel">
-        Cancel
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-mastercard"></i>
-        <span className="ml-2">Mastercard</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div className="checkbox">
-        <input id="checkbox10" type="checkbox" />
-        <label htmlFor="checkbox10"></label>
-      </div>
-    </td>
-    <td>#MD4578</td>
-    <td>
-      <span className="img-thumb">
-        <img
-          src="https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg"
-          alt=""
-        />
-        <span className="ml-2">Emily Arnold</span>
-      </span>
-    </td>
-    <td>28/08/2022</td>
-    <td>$800</td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="Pending">
-        Pending
-      </label>
-    </td>
-    <td>
-      <span className="img-thumb">
-        <i className="fab fa-cc-visa"></i>
-        <span className="ml-2">Visa</span>
-      </span>
-    </td>
-    <td>
-      <label className="mb-0 badge badge-primary" title="View Detail">
-        View Detail
-      </label>
-    </td>
-  </tr>
-</tbody>
-
-                      </table>
-                    </div>
-                  </div>
-              </div>
+                <OrdersList orders={orders} />
               </div>
             </div>
           </div>

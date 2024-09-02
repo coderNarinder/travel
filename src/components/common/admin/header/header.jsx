@@ -1,5 +1,6 @@
 import React from 'react';
 import userIcon from "./../../../../assets/user.png";
+import { Link } from 'react-router-dom';
 
 export default function AdminHeader({ toggleSidebar }) {
   return (
@@ -47,20 +48,13 @@ export default function AdminHeader({ toggleSidebar }) {
               </li>
             </ul>
             <ul className="navbar-nav float-end">
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+              <li className="nav-item">
+                <Link to="/cpanel/admin-setting" className="nav-link">
                   <div className="notification-info">
                     <i className="mdi mdi-settings font-24"></i>
                     <span class="count-notification"></span>
                   </div>
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -211,31 +205,27 @@ export default function AdminHeader({ toggleSidebar }) {
                   className="dropdown-menu dropdown-menu-end user-dd animated"
                   aria-labelledby="navbarDropdown"
                 >
-                  <a className="dropdown-item" href="#">
+                  <Link to="/cpanel/profile" className="dropdown-item">
                     <i className="mdi mdi-account me-1 ms-1"></i> My Profile
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    <i className="mdi mdi-wallet me-1 ms-1"></i> My Balance
-                  </a>
-                  <a className="dropdown-item" href="#">
+                  </Link>
+                  <Link to="#!" className="dropdown-item">
+                    <i className="mdi mdi-wallet me-1 ms-1"></i> Balance Sheet
+                  </Link>
+                  <Link to="#!" className="dropdown-item">
                     <i className="mdi mdi-email me-1 ms-1"></i> Inbox
-                  </a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
+                  </Link>
+                  <Link to="/cpanel/admin-setting" className="dropdown-item">
                     <i className="mdi mdi-settings me-1 ms-1"></i> Account Setting
-                  </a>
+                  </Link>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
+                  <Link to="/cpanel/logout" className="dropdown-item">
                     <i className="fa fa-power-off me-1 ms-1"></i> Logout
-                  </a>
+                  </Link>
                   <div className="dropdown-divider"></div>
                   <div className="ps-4 p-10">
-                    <a
-                      href="#"
-                      className="btn btn-sm btn-success btn-rounded text-white"
-                    >
+                    <Link to="/cpanel/profile" className="btn btn-sm btn-success btn-rounded text-white">
                       View Profile
-                    </a>
+                    </Link>
                   </div>
                 </ul>
               </li>
