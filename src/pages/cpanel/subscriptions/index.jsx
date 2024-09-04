@@ -25,7 +25,7 @@ const Subscription = () => {
       <div className="subcriptionSec">
         <div className="container-fluid">
           <div className="row justify-content-center">
-            <div className="col-md-9">
+            <div className="col-md-12">
               <div className="subcriptionWrpr">
                 <div className="text-center">
                   <h2>Transform Your Business <span>with Our Subscription Packages</span></h2>
