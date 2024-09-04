@@ -19,12 +19,35 @@ export default function Users() {
   return (
     <>
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-lg-12 pt-2">
-                    <h4>All Users List</h4>
-                    <UserList users={users} />
-                </div>
+          <div className="row">
+            <div className="col-lg-12 pt-2">
+              <h4>All Customers List</h4>
+              <UserList users={users} />
             </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <nav aria-label="Page navigation">
+                <ul className="pagination justify-content-center mt-4">
+                  <li className="page-item">
+                    <a className="page-link" href="#">Previous</a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">1</a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">2</a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">3</a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#"> &nbsp; Next &nbsp; </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
     </>
   )

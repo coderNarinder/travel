@@ -22,9 +22,9 @@ const sidebarHeadings = [
   },
   {
     id: 4,
-    heading: 'All Users',
+    heading: 'All Customers',
     icon: <i className="mdi mdi-account"></i>,
-    link: 'users',
+    link: 'customers',
   },
   {
     id: 5,
@@ -40,18 +40,24 @@ const sidebarHeadings = [
   },
   {
     id: 7,
+    heading: 'Trems & Condtions',
+    icon: <i className="mdi mdi-book"></i>,
+    link: 'tnc',
+  },
+  {
+    id: 8,
     heading: 'Subscription',
     icon: <i className="mdi mdi-check-circle"></i>,
     link: 'subscription',
   },
   {
-    id: 8,
+    id: 9,
     heading: 'Admin Settings',
     icon: <i className="mdi mdi-settings"></i>,
     link: 'admin-setting',
   },
   {
-    id: 9,
+    id: 10,
     heading: 'Logout',
     icon: <i className="mdi mdi-logout"></i>,
     link: '/logout',

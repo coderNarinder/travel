@@ -15,13 +15,14 @@ const CreateVendor = lazy(() => import('../pages/cpanel/vendors/create'));
 const VendorDetail = lazy(() => import('../pages/cpanel/vendors/details'));
 const VendorLayout = lazy(() => import('../pages/cpanel/vendors/vendorLayout'));
 const TourList = lazy(() => import('../pages/cpanel/vendors/tours'));
+const OrderList = lazy(() => import('../pages/cpanel/vendors/orders'));
 const AdminSettings = lazy(() => import('../pages/cpanel/settings/AdminSettings'));
 const TourListing = lazy(() => import('../pages/cpanel/tours/listing'));
 const Subscription = lazy(() => import('../pages/cpanel/subscriptions'));
 const VendorEdit = lazy(() => import('../pages/cpanel/vendors/edit'));
 const FAQ = lazy(() => import('../pages/cpanel/faq'));
 const Orders = lazy(() => import('../pages/cpanel/orders'));
-const Users = lazy(() => import('../pages/cpanel/users'));
+const Customers = lazy(() => import('../pages/cpanel/customers'));
 const BusinessProfile = lazy(() => import('../pages/cpanel/business-profile'));
 
 
@@ -101,10 +102,10 @@ const router = createBrowserRouter([
                 )
             },
             {
-                path: 'users',
+                path: 'customers',
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <Users />
+                        <Customers />
                     </Suspense>
                 )
             },
@@ -193,6 +194,14 @@ const router = createBrowserRouter([
                         element: (
                             <Suspense fallback={<div>Loading...</div>}>
                                 <TourList />
+                            </Suspense>
+                        )
+                    },
+                    {
+                        path: '/cpanel/vendor-detail/:slug/orders',
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <OrderList />
                             </Suspense>
                         )
                     }

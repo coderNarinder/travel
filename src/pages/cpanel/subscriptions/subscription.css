@@ -1,5 +1,5 @@
 .subcriptionSec{
-    padding: 70px 0;
+    padding: 50px 0;
 }
 .subcriptionOuter {
     display: flex;
@@ -16,16 +16,16 @@
 }
 
 .subcriptionOuter .subcriptionInner .subscriptionBox {
-    background-color: #ffffff;
-    padding: 40px 20px 25px;
     border-radius: 8px;
-    border: 1px solid #ffd5ab;
     position: relative;
     transition: all .4s;
+    padding: 40px 20px 25px;
+    border: 1px solid #ecf1ff;
+    background-color: #FFFFFF;
     box-shadow: 0px 10px 18px -2px rgba(0, 0, 0, 0.1);
 }
 .packageIcon {
-    color: #525252;
+    color: #181A20;
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -33,8 +33,7 @@
     margin: 15px auto;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ffd5ab;
-    background-color: #fff8f0;
+    background-color: #f5f5f5;
 }
 
 .packageIcon i {
@@ -47,30 +46,48 @@
     font-style: italic;
 }
 .packageTitle h4 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 22px;
     font-weight: 400;
-    color: #585858;
+    color: #747474;
 }
 .packageTitle h5 {
     font-size: 26px;
     line-height: 34px;
-    color: #ffb265;
+    color: #2a2a2a;
     font-weight: 600;
 }
 .packageCta a.btn {
-    color: #181818;
+    color: #ffffff;
     display: block;
     width: 100%;
     font-size: 16px;
     line-height: 26px;
-    background-color: #ffd5ab;
-    border-color: #ffd5ab;
+    background-color: #0518e4;
+    border: 1px solid #0518e4;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     padding: 8px 20px;
     outline: none !important;
     box-shadow: none !important;
+}
+.packageCta a.btn.bg-black {
+    border-color: #181A20;
+    background-color: #181A20;
+}
+.packageCta a.btn:hover {
+    border-color: #181A20;
+    background-color: #181A20;
+}
+.packageCta a.btn.bg-black {
+    color: #181A20;
+    border-color: #181A20;
+    background-color: #FFFFFF;
+}
+.packageCta a.btn.bg-black:hover {
+    color: #FFFFFF;
+    border-color: #181A20;
+    background-color: #181A20;
 }
 .packageCta {
     margin-top: 35px;
@@ -97,10 +114,10 @@
 .subcriptionSec form li label .switchCTA{
     position: relative;
     cursor: pointer;
-    width: 150px;
+    width: 160px;
     height: 44px;
     background-color: #ffffff;
-    border: 1px solid #ffd5ab;
+    border: 1px solid #d7d7d7;
     border-radius: 28px;
     z-index: 0;
     font-size: 15px;
@@ -120,7 +137,7 @@
 .subcriptionSec form label .switchCTA:after {
     content: "✓";
     position: absolute;
-    color: #4e4e4e;
+    color: #555555;
     left: 12px;
     width: 30px;
     height: 30px;
@@ -128,7 +145,7 @@
     top: 50%;
     translate: 0 0;
     transition: all .3s;
-    background-color: #fff6ec;
+    background-color: #e8e8e8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,26 +156,29 @@
     color:var(--ds-background-selected-bold-pressed);
 }
 .subcriptionSec form label input:checked + .switchCTA{
-    background-color: #fff8f0;
-    box-shadow: 0px 5px 4px 0px rgba(0, 0, 0,0.1);
+    color: #FFFFFF;
+    background-color: #181A20;
+    border-color: #181A20;
+    box-shadow: 0px 5px 4px 0px rgb(0 0 0 / 10%);
 }
 .subcriptionSec form label input:checked + .switchCTA:after {
-    background-color: #ffd5ab;
+    color: #FFF;
+    background-color: rgb(255 255 255 / 15%);
 }
 .subcriptionSec h2 {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 42px;
-    font-weight: 500;
-    color: #565656;
+    font-weight: 400;
+    color: #181a20;
 }
-.subcriptionSec h2 span{
-    font-weight: 800;
+.subcriptionSec h2 span {
+    font-weight: 700;
 }
 .subcriptionSec p {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
     font-weight: 400;
-    color: #222222;
+    color: #181a20;
 }
 .subcriptionSec form li label input {
     opacity: 0;

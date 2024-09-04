@@ -4961,7 +4961,7 @@ section {
 
 .cta-banner4 {
   background-attachment: fixed;
-  background-image: url(../images/background/cta-bg-1.jpg);
+  background-image: url('https://cab.fivvia.com/images/background/cta-bg-1.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

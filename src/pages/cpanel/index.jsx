@@ -27,7 +27,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                           <h5 className="mb-0">2540</h5>
-                          <a href="/cpanel/users" className="font-light">Total Users</a>
+                          <a href="/cpanel/customers" className="font-light">Total Users</a>
                         </div>
                       </div>
                     </div>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                         </div>
                         <div className="boardCont">
                           <h5 className="mb-0">120</h5>
-                          <a href="/cpanel/users" className="font-light">New Users</a>
+                          <a href="/cpanel/customers" className="font-light">New Users</a>
                         </div>
                       </div>
                     </div>

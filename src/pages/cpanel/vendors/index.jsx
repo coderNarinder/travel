@@ -132,7 +132,7 @@ const VendorListing = () => {
               </a>
             </div>
           </nav>
-          <div className="card">
+          <div className="card vendor-tabs-body">
             <div className="card-body">
               <div className="tab-content" id="nav-tabContent">
                 <div
@@ -142,7 +142,7 @@ const VendorListing = () => {
                   aria-labelledby="nav-home-tab"
                 >
                   <div className="table-responsive">
-                    <table id="zero_config" className="table table-striped table-bordered">
+                    <table id="zero_config" className="table table-striped table-bordered m-0">
                       <thead>
                         <tr>
                           <th>Banner</th>
