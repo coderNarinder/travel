@@ -1,5 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom'; 
+import CreateSlider from '../pages/cpanel/sliders/create';
+import EditSlider from '../pages/cpanel/sliders/edit';
+
+const SliderListing = lazy(() => import('../pages/cpanel/sliders'));
 
 const HomeLayout = lazy(() => import('../pages/home/layout'));
 const HomePage = lazy(() => import('../pages/home/homepage'));
@@ -142,10 +146,34 @@ const router = createBrowserRouter([
                 )
             },
             {
+                path: '/cpanel/slider/listing',
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <SliderListing />
+                    </Suspense>
+                )
+            },
+            {
+                path: '/cpanel/slider/create',
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <CreateSlider />
+                    </Suspense>
+                )
+            },
+            {
                 path: '/cpanel/vendor/listing',
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
                         <VendorListing />
+                    </Suspense>
+                )
+            },
+            {
+                path: '/cpanel/slider/:id/edit',
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <EditSlider />
                     </Suspense>
                 )
             },

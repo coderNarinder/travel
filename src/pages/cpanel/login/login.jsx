@@ -45,13 +45,8 @@ const Login = () => {
       <div className="auth-full-page-content">
         <div className="loginBody auth-content my-auto">
           <div className="loginHdr text-center">
-            {/* <div className="loginLogo text-center">
-              <Link to="/" className="d-block auth-logo"></Link>
-            </div> */}
             <h3>Login</h3>
-            <p>
-              Please enter your details below to Sign In
-            </p>
+            <p>Please enter your details below to Sign In</p>
           </div>
           {error.has && (
             <div className={`alert alert-${error.type}`} role="alert">

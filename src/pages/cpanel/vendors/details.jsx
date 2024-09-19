@@ -25,8 +25,8 @@ const Details = () => {
             </div>
             <div className="row mb-1">
               <div className="col-md-3">Categories</div>
-              <div className="col-md-9">{vendor?.categoryData && vendor?.categoryData?.length > 0 && vendor?.categoryData.map((cate) => (
-                <span className='badge badge-dark text-primary' key={cate.id}>{cate.name}</span>
+              <div className="col-md-9 d-flex gap-1">{vendor?.categoryData && vendor?.categoryData?.length > 0 && vendor?.categoryData.map((cate) => (
+                <span className='badge-new' key={cate.id}>{cate.name}</span>
               ))}</div>
             </div>
             <div className="row mb-1">

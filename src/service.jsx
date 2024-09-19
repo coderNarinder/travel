@@ -21,6 +21,18 @@ const postRequest = async (url, params, file = 0) => {
   return response.data;
 };
 
+const postRequestGod = async (url, params, file = 0) => {
+  if (file === 1) {
+    headers["Content-Type"] = "multipart/form-data";
+  } else {
+    headers["Content-Type"] = "application/json";
+  }
+  const response = await axios.post(`${baseURL2}${url}`, params, {
+    headers: headers,
+  });
+  return response.data;
+};
+
 const loginFun = async (loginDetails) => {
   const response = await axios.post(`${baseURL}/v1/login`, loginDetails, {
     headers: headers,
@@ -66,4 +78,5 @@ export {
   loginFun,
   getRequest,
   getRequestGod,
+  postRequestGod
 };

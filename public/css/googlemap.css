@@ -93,7 +93,7 @@
   border-color: #E8543E transparent transparent;
 }
 .map-marker-container[data-marker_id="1"] .marker-arrow:before {
-  border-color: #0518e4 transparent transparent;
+  border-color: #3b4bf9 transparent transparent;
 }
 .map-marker-container[data-marker_id="2"] .marker-arrow:before {
   border-color: #E8543E transparent transparent;
@@ -102,7 +102,7 @@
   border-color: #35c2a5 transparent transparent;
 }
 .map-marker-container[data-marker_id="4"] .marker-arrow:before {
-  border-color: #0518e4 transparent transparent;
+  border-color: #3b4bf9 transparent transparent;
 }
 .map-marker-container[data-marker_id="5"] .marker-arrow:before {
   border-color: #ffb874 transparent transparent;
@@ -111,25 +111,25 @@
   border-color: #ff007a transparent transparent;
 }
 .map-marker-container[data-marker_id="0"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .map-marker-container[data-marker_id="1"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .map-marker-container[data-marker_id="2"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .map-marker-container[data-marker_id="3"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .map-marker-container[data-marker_id="4"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .map-marker-container[data-marker_id="5"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .map-marker-container[data-marker_id="6"] .face {
-  background-color: #181A20;
+  background-color: #1f262d;
 }
 .marker-card {
   width: 100%;

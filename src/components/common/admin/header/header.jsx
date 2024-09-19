@@ -21,7 +21,7 @@ export default function AdminHeader({ toggleSidebar }) {
                   <i className="mdi mdi-menu font-24"></i>
                 </a>
               </li>
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -38,14 +38,10 @@ export default function AdminHeader({ toggleSidebar }) {
                   </span>
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                  <li><a className="dropdown-item" href="#">Add Vendor</a></li>
+                  <li><a className="dropdown-item" href="#">Add Tour</a></li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
             <ul className="navbar-nav float-end">
               <li className="nav-item">
@@ -57,137 +53,23 @@ export default function AdminHeader({ toggleSidebar }) {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                <Link to="#!" className="nav-link">
                   <div className="notification-info">
                     <i className="mdi mdi-bell-outline font-24"></i>
                     <span className="count-notification"></span>
                   </div>
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <Link to="#!" className="nav-link">
+                  <div className="notification-info">
+                    <i className="font-24 mdi mdi-comment-processing"></i>
+                  </div>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link dropdown-toggle waves-effect waves-dark"
-                  href="#"
-                  id="2"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i className="font-24 mdi mdi-comment-processing"></i>
-                </a>
-                <ul
-                  className="
-                    dropdown-menu dropdown-menu-end
-                    mailbox
-                    animated
-                    bounceInDown
-                  "
-                  aria-labelledby="2"
-                >
-                  <ul className="list-style-none">
-                    <li>
-                        <a href="#" className="link border-top">
-                          <div className="d-flex align-items-center p-3">
-                            <span
-                              className="
-                                btn btn-success btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "
-                            >
-                              <i className="mdi mdi-calendar text-white fs-4"></i>
-                            </span>
-                            <div className="ms-2">
-                              <h5 className="mb-0">Event today</h5>
-                              <span className="mail-desc">Just a reminder that event</span>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="link border-top">
-                          <div className="d-flex align-items-center p-3">
-                            <span
-                              className="
-                                btn btn-info btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "
-                            >
-                              <i className="mdi mdi-settings fs-4"></i>
-                            </span>
-                            <div className="ms-2">
-                              <h5 className="mb-0">Settings</h5>
-                              <span className="mail-desc">
-                                You can customize this template
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="link border-top">
-                          <div className="d-flex align-items-center p-3">
-                            <span
-                              className="
-                                btn btn-primary btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "
-                            >
-                              <i className="mdi mdi-account fs-4"></i>
-                            </span>
-                            <div className="ms-2">
-                              <h5 className="mb-0">Pavan kumar</h5>
-                              <span className="mail-desc">Just see the my admin!</span>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="link border-top">
-                          <div className="d-flex align-items-center p-3">
-                            <span
-                              className="
-                                btn btn-danger btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "
-                            >
-                              <i className="mdi mdi-link fs-4"></i>
-                            </span>
-                            <div className="ms-2">
-                              <h5 className="mb-0">Launch Admin</h5>
-                              <span className="mail-desc">Just see the my new admin!</span>
-                            </div>
-                          </div>
-                        </a>
-                    </li>
-                  </ul>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="
-                    nav-link
-                    dropdown-toggle
-                    text-muted
-                    waves-effect waves-dark
-                    pro-pic
-                  "
+                  className="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
                   href="#"
                   id="navbarDropdown"
                   role="button"
@@ -221,12 +103,6 @@ export default function AdminHeader({ toggleSidebar }) {
                   <Link to="/cpanel/logout" className="dropdown-item">
                     <i className="fa fa-power-off me-1 ms-1"></i> Logout
                   </Link>
-                  <div className="dropdown-divider"></div>
-                  <div className="ps-4 p-10">
-                    <Link to="/cpanel/profile" className="btn btn-sm btn-success btn-rounded text-white">
-                      View Profile
-                    </Link>
-                  </div>
                 </ul>
               </li>
             </ul>

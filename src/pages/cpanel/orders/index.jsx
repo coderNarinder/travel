@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OrdersList from '../../../components/orderlist';
+import ReactPaginate from 'react-paginate';
 
 const orders = [
   { id: '#JH2033', name: 'Emily Arnold', date: '22/06/2022', total: '$600', status: 'Pending', method: 'Paypal', img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' },
@@ -14,6 +15,13 @@ const orders = [
 ];
 
 const Orders = () => {
+  const [itemsPerPage, setLimit] = useState(2);
+  const [pageCount, setPageCount] = useState(2); 
+
+  const handlePageClick = (event) => {
+    
+  }
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -24,25 +32,16 @@ const Orders = () => {
       </div>
       <div className="row">
         <div className="col-md-12">
-          <nav aria-label="Page navigation">
-            <ul className="pagination justify-content-center mt-4">
-              <li className="page-item">
-                <a className="page-link" href="#">Previous</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">1</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">2</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">3</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#"> &nbsp; Next &nbsp; </a>
-              </li>
-            </ul>
-          </nav>
+        <ReactPaginate
+                    className="pagination justify-content-center mt-4"
+                    breakLabel="..."
+                    nextLabel="&nbsp;Next&nbsp;"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={itemsPerPage}
+                    pageCount={pageCount}
+                    previousLabel="Previous"
+                    renderOnZeroPageCount={null}
+                  />
         </div>
       </div>
     </div>

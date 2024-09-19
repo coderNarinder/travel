@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import VendorContext from "./VendorContext";
 import { useForm } from "react-hook-form";
-import { getRequest, postRequest } from "../../../service";
-import UploadFile from "../../../components/common/admin/components/formcontrols/UploadFile";
+import { getRequest, getRequestGod, postRequest } from "../../../service";
+import UploadFile from '@components/upload-file';
 
 const VendorEdit = () => {
   const vendor = useContext(VendorContext);
@@ -42,7 +42,7 @@ const VendorEdit = () => {
   };
 
   const getCategories = () => {
-    getRequest("v1/category/listing?skip=0&limit=50&tree=1&parent=0")
+    getRequestGod("v1/category/listing?skip=0&limit=50&tree=1&parent=0")
       .then((res) => {
         setCategories(res.data);
       })
@@ -233,11 +233,7 @@ const VendorEdit = () => {
                     </div>
                   </div>
 
-
-
-
-
-
+ 
 
                   <div className="form-group row">
                     <label

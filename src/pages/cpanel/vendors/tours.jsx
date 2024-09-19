@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getRequest, postRequest } from '../../../service';
-import './index.css';
 
 const TourList = () => {
   const { slug } = useParams();
@@ -83,18 +82,18 @@ const TourList = () => {
               <div className="candidate-list">
                 {loading && 'Loading...'}
                 {records.map((record, index) => (
-                  <div className="candidate-list-box tour-card mt-3" key={index}>
-                    <div className="p-4 card-body">
-                      <div className="align-items-center row">
-                        <div className="col-lg-2">
+                  <div className="candidate-list-box custom-card tour-card m-0 mt-4" key={index}>
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-auto">
                           <div className="candidate-list-images">
-                            <img src={record.thumbnail} alt={index} className="avatar-md img-thumbnail rounded-circle" />
+                            <img src={record?.thumbnail ? record?.thumbnail : 'https://via.placeholder.com/400'} alt={index} className="candidate-list-img" />
                           </div>
                         </div>
-                        <div className="col-lg-8">
+                        <div className="col-lg-7">
                           <div className="candidate-list-content mt-3 mt-lg-0">
-                            <h5 className="fs-19 mb-0">
-                              <span className="primary-link">{record.name}</span>
+                            <h5 className="fs-18 mb-2">
+                              {record?.name}
                             </h5>
                             <p className="text-muted mb-2">{record.description ? record.description.slice(0, 150) : 'Tour details missing'}...</p>
                             <ul className="list-inline mb-0 text-muted">
@@ -108,11 +107,15 @@ const TourList = () => {
                             </ul>
                           </div>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 tour-tags-wrap">
                           <Link className='btn btn-primary pull-right px-4' to={`/cpanel/vendor-detail/${record.vendor_id}/tour/${record.id}/edit`}>Edit</Link>
                         </div>
                       </div>
-                      <div className="favorite-icon"></div>
+                      <div className="favorite-icon">
+                          <a href="#">
+                            <i className="mdi mdi-heart fs-18"></i>
+                          </a>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -120,7 +123,7 @@ const TourList = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </>
   );
 };

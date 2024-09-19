@@ -5,8 +5,12 @@ import { postRequest } from './service';
 import NotFound from './pages/notfound';
 import OnSetupLoad from './components/common/onSetupLoad'; 
 import Loader from './components/common/admin/components/loader';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoaderSpinner from './components/loader-spinner';
+import { useSelector } from 'react-redux';
 const App = () => {
+  const loader = useSelector((state) => state.loader.value);  
   const [client, setClient] = useState(null);
   const [isDomain, setIsDomain] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -29,6 +33,11 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer limit={3}/>
+      {
+         loader && <LoaderSpinner />
+      }
+         
       {
         loading ? <Loader /> : (
           isDomain ? (
@@ -38,7 +47,7 @@ const App = () => {
               <OnSetupLoad /> 
             ) 
           ) : (
-            <NotFound />
+               <NotFound />
           )
         )
       } 

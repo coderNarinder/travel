@@ -58,12 +58,12 @@ function VendorLayout() {
                                 <div className="card-body">
                                     <img src={vendor?.banner || ''} className='w-100 rounded shadow' alt="Vendor Banner" />
                                     <div className="comment-footer mt-3 text-center row">
-                                        <div className="col-md-4">
+                                        <div className="col-md-3">
                                             <div className='vendor-logo'>
                                                 <img src={vendor?.logo || ''} className='w-100 border' alt="Vendor Logo" />
                                             </div>
                                         </div>
-                                        <div className="col-md-8 align-self-center">
+                                        <div className="col-md-9 align-self-center justify-content-end d-flex">
                                             <Link to={`/cpanel/vendor-detail/${slug}/edit`} className="btn btn-cyan text-white mx-1">Edit</Link> 
                                             <button type="button" className="btn btn-secondary text-white mx-1">
                                                 Publish
@@ -96,7 +96,6 @@ function VendorLayout() {
                         </div>
                     </div>
                     <div className="col-md-8">
-                        <div className="tour-tertiary-wrap">
                             <div className="tour-tertiary">
                                 <Link to={`/cpanel/vendor-detail/${slug}/info`} className={`btn btn-tertiary w-100 ${isActive(`/cpanel/vendor-detail/${slug}/info`) ? 'btn-active' : ''}`}>
                                     <div className="icon icon-left">
@@ -126,6 +125,7 @@ function VendorLayout() {
                                     </div>
                                 </Link>
                             </div>
+                        <div className="tour-tertiary-wrap">
                             <Outlet />
                         </div>
                     </div>

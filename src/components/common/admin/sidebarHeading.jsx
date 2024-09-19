@@ -40,9 +40,9 @@ const sidebarHeadings = [
   },
   {
     id: 7,
-    heading: 'Trems & Condtions',
+    heading: 'Sliders',
     icon: <i className="mdi mdi-book"></i>,
-    link: 'tnc',
+    link: 'slider/listing',
   },
   {
     id: 8,

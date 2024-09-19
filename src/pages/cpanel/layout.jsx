@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import AdminHeader from '../../components/common/admin/header/header';
 import AdminSidebar from '../../components/common/admin/sidebar';
 import { postRequest } from '../../service';
-import "./../../../public/admin/assets/css/style.min.css";
+import "@admin/assets/css/style.min.css";
 import "./layout.css";
 
 const AdminLayout = () => { 
@@ -15,6 +15,8 @@ const AdminLayout = () => {
         if (res.status === 1) { 
           localStorage.setItem("accessToken", res.accessToken);
           localStorage.setItem("user", JSON.stringify(res.data)); 
+          localStorage.setItem("tour_contents", JSON.stringify(res.contents)); 
+          
           setIsLogin(true);
         }
       })
@@ -50,8 +52,7 @@ const AdminLayout = () => {
       <div className="page-wrapper"> 
         <Outlet />
         <footer className="footer text-center">
-          All Rights Reserved by Fivvia. Designed and Developed by&nbsp;
-          <a href="https://www.Fivvia.com">Fivvia</a>.
+          All Rights Reserved by Fivvia. Designed and Developed by <a href="https://www.Fivvia.com">Fivvia</a>.
         </footer>
       </div>
     </div>

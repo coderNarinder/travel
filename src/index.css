@@ -2,3 +2,16 @@ body, html {
     padding: 0;
     margin: 0 auto;
 }
+.loader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: #fffbfba1;
+    z-index: 9999999;
+    top: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

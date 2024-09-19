@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { getRequest, postRequest } from '../../../service';
-import UploadFile from '../../../components/common/admin/components/formcontrols/UploadFile';
-
+import UploadFile from '@components/upload-file';
 const CreateVendor = () => {
     const [country, setCountry] = useState([]);
     const [state, setState] = useState([]);
@@ -163,7 +162,7 @@ const CreateVendor = () => {
                                 <div className="form-group row">
                                     <label htmlFor="banner" className="col-sm-3 control-label col-form-label"><span>Banner</span></label>
                                     <div className="col-sm-9">
-                                        <UploadFile 
+                                        <UploadFile
                                             onUpload={handleImageUpload}
                                             name={"banner"}
                                             path={"vendors/"} 

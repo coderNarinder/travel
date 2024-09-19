@@ -1,54 +1,60 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { getRequest } from '../../../service';
 import { Link } from 'react-router-dom';
-import './index.css';
-import { parse } from 'date-fns';
+import ReactPaginate from 'react-paginate';
 
 const VendorListing = () => {
   const [vendors, setVendors] = useState([]);
-  const [status, setStatus] = useState("Pending"); 
-  const [pendingCount, setPendingCount] = useState(0); 
-  const [activeCount, setActiveCount] = useState(0); 
-  const [inactiveCount, setInactiveCount] = useState(0); 
-  const [blockedCount, setBlockedCount] = useState(0); 
-  const [total, setTotal] = useState(0); 
+  const [status, setStatus] = useState("Pending");
+  const [pendingCount, setPendingCount] = useState(0);
+  const [activeCount, setActiveCount] = useState(0);
+  const [inactiveCount, setInactiveCount] = useState(0);
+  const [blockedCount, setBlockedCount] = useState(0);
+  const [records, setRecords] = useState([]);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [itemsPerPage, setLimit] = useState(5);
+  const [pageCount, setPageCount] = useState(0);
+  const [total, setTotal] = useState(0);
 
- 
-  useEffect(() => {
-    getVendors();
-  }, [status]); // Added status to dependency array to refetch when status changes
-
-  const getVendors = () => {
-    getRequest(`v1/vendor/listing?status=${status}&skip=0&limit=100`)
+  const getVendors =  useCallback(() => {
+    getRequest(`v1/vendor/listing?status=${status}&skip=${itemOffset}&limit=${itemsPerPage}`)
       .then(res => {
         setVendors(res.data);
         if(res?.meta?.total){
           setTotal(res.meta.total);
         }
-
+        if(res?.meta?.total > 0){
+          setPageCount(Math.ceil(res?.meta?.total / itemsPerPage));
+        }
         if(res.meta?.activeCount){
           setActiveCount(res.meta.activeCount);
         }
-
         if(res?.meta?.inactiveCount){
           setInactiveCount(res.meta.inactiveCount);
         }
-
         if(res?.meta?.blockedCount){
           setBlockedCount(res.meta.blockedCount);
         }
         if(res?.meta?.pendingCount){
           setPendingCount(res.meta.pendingCount);
-        }
-        
-        
+        }        
       })
       .catch(err => {
         console.log(err);
       });
-  };
-
+  },[]);
+  useEffect(() => {
+    getVendors();
+  }, [status, itemOffset,getVendors]);
+ 
   const filteredVendor = status !== "All" ? vendors.filter(v => v.status == status) : vendors;
+  const handlePageClick = (event) => {
+    const newOffset = event.selected >= 1 ? ((event.selected) * itemsPerPage) : 0;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  }
 
   return (
     <div className="container-fluid">
@@ -141,40 +147,57 @@ const VendorListing = () => {
                   role="tabpanel"
                   aria-labelledby="nav-home-tab"
                 >
-                  <div className="table-responsive">
-                    <table id="zero_config" className="table table-striped table-bordered m-0">
-                      <thead>
-                        <tr>
-                          <th>Banner</th>
-                          <th>Business Name</th>
-                          <th>Status</th>
-                          <th>Tours Total</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {filteredVendor.map((vendor,index) => (
-                          <tr key={index}>
-                            <td width={120}><img src={vendor.logo} alt={vendor.name} /></td>
-                            <td>
-                              <h6>{vendor.name}</h6>
-                              <p>{vendor.description}</p>
-                            </td>
-                            <td width={130}>{vendor.status}</td>
-                            <td width={130}>{vendor.products_count}</td>
-                            <td width={130}>
-                              <Link to={`/cpanel/vendor-detail/${vendor.id}/info`} className='vendor-link'>Details</Link>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                    {
-                      filteredVendor.length == 0 && (
-                        <div className="text-center"><span>No Data</span></div>
-                      )
-                    }
+                  <div className="vendor-list">
+                    <div className="vendor-list-header">
+                      <div className="vendor-list-header-item">Banner</div>
+                      <div className="vendor-list-header-item">Business Name</div>
+                      <div className="vendor-list-header-item">Status</div>
+                      <div className="vendor-list-header-item">Tours Total</div>
+                      <div className="vendor-list-header-item">Actions</div>
+                    </div>
+
+                    {filteredVendor.map((vendor, index) => (
+                      <div className="vendor-list-row" key={index}>
+                        <div className="vendor-list-item">
+                          <img src={vendor.logo} alt={vendor.name} />
+                        </div>
+                        <div className="vendor-list-item">
+                          <h6>{vendor.name}</h6>
+                          <p>{vendor.description}</p>
+                        </div>
+                        <div
+                          className={`vendor-list-item ${
+                            vendor.status === 'Active' ? 'status-active' :
+                            vendor.status === 'In-Active' ? 'status-inactive' :
+                            vendor.status === 'Pending' ? 'status-pending' :
+                            vendor.status === 'Blocked' ? 'status-blocked' : ''
+                          }`}
+                          style={{ width: '130px' }}
+                        >
+                          {vendor.status}
+                        </div>
+                        <div className="vendor-list-item">{vendor.products_count}</div>
+                        <div className="vendor-list-item">
+                          <Link to={`/cpanel/vendor-detail/${vendor.id}/info`} className="vendor-link">Details</Link>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                  {
+                    filteredVendor.length == 0 && (
+                      <div className="text-center mt-4"><span>No Data</span></div>
+                    )
+                  }
+                  <ReactPaginate
+                    className="pagination justify-content-center mt-4"
+                    breakLabel="..."
+                    nextLabel="&nbsp;Next&nbsp;"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={itemsPerPage}
+                    pageCount={pageCount}
+                    previousLabel="Previous"
+                    renderOnZeroPageCount={null}
+                  />
                 </div>
                 <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">2</div>
                 <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">3</div>

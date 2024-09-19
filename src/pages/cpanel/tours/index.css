@@ -43,17 +43,18 @@
 .remove-image::after {
     content: '✖';
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 4px;
+    right: 4px;
     color: #a90000;
     background: #ffc9c9;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    border: 2px solid #ffffff;
 }
 .tour-image img {
     display: block;
@@ -90,4 +91,26 @@
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 5px;
+}
+
+.tab-content>.active {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 21px;
+}
+
+.other-information-card {
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+}
+
+.other-information-card .form-check label {
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.silver-hawk .accordion-body {
+    padding: 16px 0 0 0;
 }

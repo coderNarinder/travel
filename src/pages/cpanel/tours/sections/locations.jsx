@@ -5,6 +5,7 @@ import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
 } from 'use-places-autocomplete'; 
+import { Form } from 'react-bootstrap';
 
 const Locations = ({ handlePickup, addressIds }) => {
   const [showModal, setShowModal] = useState(false);
@@ -136,19 +137,23 @@ const Locations = ({ handlePickup, addressIds }) => {
       />
       <div className="tags-wrap mb-2">
         {filteredRecords && filteredRecords.map((checkbox,index) => (
-         <> <div className="form-check" key={index}>
+         <> 
+
+      
+         <div className="form-check" key={index}>
          <input
            type="checkbox"
-           id={`checkbox-pickup-address-${index}`}
+           id={`checkbox-pickup-addresss-${checkbox.id.toString()}`}
            className="form-check-input" 
            checked={addressIds.includes(checkbox.id.toString())}
            onChange={(e) => handlePickupChange(e, checkbox)} 
            value={checkbox.id.toString()}
          />
-         <label className="form-check-label mb-0" htmlFor={`checkbox-pickup-address-${index}`}>
+         <label className="form-check-label mb-0" htmlFor={`checkbox-pickup-addresss-${checkbox.id.toString()}`}>
            {checkbox.title}
          </label>
-       </div></>
+       </div>
+       </>
         ))}
       </div>
       <button type="button" className="btn btn-primary btn-align-right" onClick={handleOpenModal}>

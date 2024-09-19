@@ -23,9 +23,7 @@ const SearchLocation = ({
             .then((response) => response.json())
             .then((data) => {
               if (data.status === 'OK' && data.results.length > 0) {
-                setValue('address', data.results[0].formatted_address);
-                setValue('latitude', latitude);
-                setValue('longitude', longitude);
+                
               } else {
                 setError('Unable to retrieve address.');
               }
@@ -41,7 +39,7 @@ const SearchLocation = ({
     } else {
       setError('Geolocation is not supported by this browser.');
     }
-  }, [apiKey, setLocation, setError, setValue]);
+  }, [apiKey, setLocation, setError]);
 
   const handleAddressSearch = (e) => {
     const inputValue = e.currentTarget.value.trim();

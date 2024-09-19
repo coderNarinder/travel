@@ -25,7 +25,7 @@
     box-shadow: 0px 10px 18px -2px rgba(0, 0, 0, 0.1);
 }
 .packageIcon {
-    color: #181A20;
+    color: #1f262d;
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -63,8 +63,8 @@
     width: 100%;
     font-size: 16px;
     line-height: 26px;
-    background-color: #0518e4;
-    border: 1px solid #0518e4;
+    background-color: #3b4bf9;
+    border: 1px solid #3b4bf9;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     padding: 8px 20px;
@@ -72,22 +72,22 @@
     box-shadow: none !important;
 }
 .packageCta a.btn.bg-black {
-    border-color: #181A20;
-    background-color: #181A20;
+    border-color: #1f262d;
+    background-color: #1f262d;
 }
 .packageCta a.btn:hover {
-    border-color: #181A20;
-    background-color: #181A20;
+    border-color: #1f262d;
+    background-color: #1f262d;
 }
 .packageCta a.btn.bg-black {
-    color: #181A20;
-    border-color: #181A20;
+    color: #1f262d;
+    border-color: #1f262d;
     background-color: #FFFFFF;
 }
 .packageCta a.btn.bg-black:hover {
     color: #FFFFFF;
-    border-color: #181A20;
-    background-color: #181A20;
+    border-color: #1f262d;
+    background-color: #1f262d;
 }
 .packageCta {
     margin-top: 35px;
@@ -157,8 +157,8 @@
 }
 .subcriptionSec form label input:checked + .switchCTA{
     color: #FFFFFF;
-    background-color: #181A20;
-    border-color: #181A20;
+    background-color: #1f262d;
+    border-color: #1f262d;
     box-shadow: 0px 5px 4px 0px rgb(0 0 0 / 10%);
 }
 .subcriptionSec form label input:checked + .switchCTA:after {
@@ -169,7 +169,7 @@
     font-size: 30px;
     line-height: 42px;
     font-weight: 400;
-    color: #181a20;
+    color: #1f262d;
 }
 .subcriptionSec h2 span {
     font-weight: 700;
@@ -178,7 +178,7 @@
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
-    color: #181a20;
+    color: #1f262d;
 }
 .subcriptionSec form li label input {
     opacity: 0;

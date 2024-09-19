@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "./listing.css";
 import { getRequest } from "../../../service";
 import { Link } from "react-router-dom";
+import ReactPaginate from 'react-paginate';
 
 const TourListing = () => {
   const [loading, setLoading] = useState(false);
   const [records, setRecords] = useState([]);
+  const [itemsPerPage, setLimit] = useState(2);
+  const [pageCount, setPageCount] = useState(2); 
 
   console.log(loading);
 
@@ -27,6 +29,10 @@ const TourListing = () => {
         setLoading(false);
       });
   };
+
+  const handlePageClick = (event) => {
+    
+  }
 
   return (
     <>
@@ -145,27 +151,26 @@ const TourListing = () => {
                 </div>
                 <div className="candidate-list">
                    {records && records.map((record, index) => (
-                    <div
-                      className="candidate-list-box custom-card tour-card mt-4"
-                      key={index}
-                    >
-                      <div className="p-4 card-body">
-                        <div className="align-items-center row">
+                    <div className="candidate-list-box custom-card tour-card mt-4" key={index}>
+                      <div className="card-body">
+                        <div className="row">
                           <div className="col-auto">
                             <div className="candidate-list-images">
                                 <img
                                   src={record?.thumbnail ? record?.thumbnail : 'https://via.placeholder.com/400'}
                                   alt=""
-                                  className="avatar-md img-thumbnail rounded-circle"
+                                  className="candidate-list-img"
                                 />
                             </div>
                           </div>
                           <div className="col-lg-5">
                             <div className="candidate-list-content mt-3 mt-lg-0">
-                              <h5 className="fs-19 mb-0">
+                              <h5 className="fs-18 mb-2">
                                 {record?.name}
                               </h5>
-                              <p className="text-muted mb-2">Project Manager</p>
+                              <p className="text-muted mb-2">
+                                {record.description.split(' ').slice(0, 20).join(' ') + (record.description.split(' ').length > 20 ? '...' : '')}
+                              </p>
                               <ul className="list-inline mb-0 text-muted">
                                 <li className="list-inline-item">
                                   <i className="mdi mdi-map-marker"></i>{" "}
@@ -186,18 +191,18 @@ const TourListing = () => {
                               </ul>
                             </div>
                           </div>
-                          <div className="col-lg-5 tour-tags-wrap">
+                          <div className="col-lg-4 tour-tags-wrap">
                             <div className="mt-2 mt-lg-0 d-flex flex-wrap align-items-stretch gap-1">
                               {record?.category.map((cate, index) => (
                                 <span
-                                  className="badge"
+                                  className="badge-new"
                                   key={index}
                                 >
                                   {cate}
                                 </span>
                               ))}
                               <Link
-                                className="btn btn-primary pull-right px-3"
+                                className="btn btn-primary pull-right px-4"
                                 to={`/cpanel/vendor-detail/${record?.vendor_id}/tour/${record?.id}/edit`}
                               >
                                 Edit
@@ -219,25 +224,16 @@ const TourListing = () => {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <nav aria-label="Page navigation">
-                  <ul className="pagination justify-content-center mt-4">
-                    <li className="page-item">
-                      <a className="page-link" href="#">Previous</a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">1</a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">2</a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">3</a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#"> &nbsp; Next &nbsp; </a>
-                    </li>
-                  </ul>
-                </nav>
+                  <ReactPaginate
+                    className="pagination justify-content-center mt-4"
+                    breakLabel="..."
+                    nextLabel="&nbsp;Next&nbsp;"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={itemsPerPage}
+                    pageCount={pageCount}
+                    previousLabel="Previous"
+                    renderOnZeroPageCount={null}
+                  />
               </div>
             </div>
           </div>

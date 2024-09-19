@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react';
 import UserList from '../../../components/userlist'
+import ReactPaginate from 'react-paginate';
 
 const users = [
     { id: '#USR001', email: 'emily.arnold@example.com', name: 'Emily Arnold', contactNo: '+1234567890', dateOfJoining: '22/06/2022', totalOrders: 5, img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' },
@@ -13,9 +14,14 @@ const users = [
     { id: '#USR009', email: 'emily.arnold3@example.com', name: 'Emily Arnold', contactNo: '+3344556677', dateOfJoining: '28/08/2022', totalOrders: 1, img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/1.jpg' },
     { id: '#USR010', email: 'john.doe2@example.com', name: 'John Doe', contactNo: '+4455667788', dateOfJoining: '14/07/2022', totalOrders: 10, img: 'https://kamleshyadav.com/html/splashdash/html/b5/light/assets/images/table/3.jpg' }
   ];
-  
 
 export default function Users() {
+  const [itemsPerPage, setLimit] = useState(2);
+  const [pageCount, setPageCount] = useState(2); 
+
+  const handlePageClick = (event) => {
+    
+  }
   return (
     <>
         <div className="container-fluid">
@@ -27,25 +33,16 @@ export default function Users() {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <nav aria-label="Page navigation">
-                <ul className="pagination justify-content-center mt-4">
-                  <li className="page-item">
-                    <a className="page-link" href="#">Previous</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">1</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">2</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">3</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#"> &nbsp; Next &nbsp; </a>
-                  </li>
-                </ul>
-              </nav>
+                  <ReactPaginate
+                    className="pagination justify-content-center mt-4"
+                    breakLabel="..."
+                    nextLabel="&nbsp;Next&nbsp;"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={itemsPerPage}
+                    pageCount={pageCount}
+                    previousLabel="Previous"
+                    renderOnZeroPageCount={null}
+                  />
             </div>
           </div>
         </div>

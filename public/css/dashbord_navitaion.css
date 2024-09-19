@@ -3,7 +3,7 @@ margin-bottom: 30px;
 }
 .dashboard_navigationbar .dropbtn {
 background-color: #fff;
-color: #181A20;
+color: #1f262d;
 border: none;
 border-radius: 5px;
 display: block;
@@ -25,7 +25,7 @@ font-size: 16px;
 }
 .dashboard_navigationbar .dropbtn:hover, .dashboard_navigationbar .dropbtn:focus {
 background-color: #fff;
-color: #181A20;
+color: #1f262d;
 border: none;
 cursor: pointer;
 outline: none;
@@ -56,7 +56,7 @@ position: relative;
 }
 .dashboard_navigationbar .dropdown-content li a {
 font-size: 14px;
-color: #181A20;
+color: #1f262d;
 }
 .dashboard_navigationbar .dropdown-content li a span {
 font-size: 18px;
@@ -64,11 +64,11 @@ padding-right: 10px;
 vertical-align: middle;
 }
 .dashboard_navigationbar .dropdown-content li.active a {
-background-color: #181A20;
+background-color: #1f262d;
 color: #FFFFFF;
 }
 .dashboard_navigationbar .dropdown a:hover {
-color: #0518e4;
+color: #3b4bf9;
 }
 .dashboard_navigationbar .show {
 background-color: #fff;
