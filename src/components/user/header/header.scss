@@ -1,0 +1,84 @@
+.top-header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e4e6e8;
+}
+.language-dropdown {
+    margin-left: auto;
+}
+.navbar-light .top-navigation .navbar-nav .nav-link,
+.navbar-light .language-dropdown.navbar-nav .nav-link {
+    color: #606060;
+    font-family: Manrope, sans-serif;
+    font-weight: 600;
+}
+.top-navigation {
+    justify-content: center;
+}
+.top-navigation .dropdown-toggle::after {
+    content: "" !important;
+    display: inline-block !important;
+    margin-left: 0.555em !important;
+    vertical-align: -0.045em !important;
+    height: 10px !important;
+    width: 10px !important;
+    background: url('./../../../../public/images/common/arrow-down.svg') no-repeat center !important;
+    opacity: 0.6 !important;
+    border: 0 !important;
+}
+.top-navigation .dropdown-menu[data-bs-popper] .dropdown-menu[data-bs-popper] {
+    top: 16px;
+    left: 100%;
+    margin-top: 0px;
+}
+.top-navigation .dropdown-divider {
+    margin: 0.5px 0;
+}
+.top-navigation .dropdown-menu .dropdown-toggle.nav-link::after {
+    transform: rotate(-90deg);
+}
+.top-navigation .dropdown-menu {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+.btn.btn-black-lg-square {
+    margin-right: 12px;
+    padding: 8px 18px;
+    color: #000000;
+    font-size: 14px !important;
+    line-height: 26px;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid #e4e6e8;
+    background-color: #FFFFFF;
+    font-family: "Manrope", sans-serif;
+}
+.btn.btn-black-lg-square:hover {
+    color: #000000;
+    box-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.09);
+}
+.btn.btn-black-lg-square svg {
+    stroke: #000000;
+    margin-left: 10px;
+    width: 12px;
+    height: initial;
+}
+.btn.btn-black-lg-square img {
+    margin-right: 12px;
+}
+@media (min-width: 991px) {
+    .navbar-expand-lg .top-navigation .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .language-dropdown {
+        order: 1;
+    }
+}
+@media (max-width: 991px) {
+    .language-dropdown {
+        margin-right: 1rem;
+    }
+}

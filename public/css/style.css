@@ -6816,7 +6816,6 @@ textarea:focus {
   color: var(--headings-color);
   font-size: 13px;
   font-weight: 400;
-  height: 50px;
   padding: 10px 30px;
 }
 
