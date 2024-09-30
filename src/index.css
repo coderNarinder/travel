@@ -22,12 +22,12 @@ body, html {
     width: 100%;
 }
 .mySwiper .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center !important;
+    font-size: 18px !important;
+    background: #ffffff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }  
 .mySwiper .swiper-slide img {
     display: block;
@@ -77,19 +77,19 @@ body, html {
 }
 .mySwiper .swiper-button-next, 
 .mySwiper .swiper-button-prev {
-    background-color: transparent;
-    font-size: initial;
+    background-color: transparent !important;
+    font-size: initial !important;
 }
 .mySwiper .swiper-button-next {
-    right: 60px;
+    right: 60px !important;
 }
 .mySwiper .swiper-button-prev {
-    left: 60px;
+    left: 60px !important;
 }
 .mySwiper .swiper-button-next:after,
 .mySwiper .swiper-button-prev:after {
-    font-size: 30px;
-    color: #fff;
+    font-size: 30px !important;
+    color: #ffffff !important;
 }
 h1, h2, h3, h4, h5, h6, .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
     font-family: "Manrope", sans-serif;
@@ -180,8 +180,8 @@ h6, .heading-6 {
     border-radius: 16px;
 }
 .swiper-button-prev, .swiper-button-next {
-    height: 40px;
-    width: 40px;
+    height: 40px !important;
+    width: 40px !important;
     line-height: 38px;
     text-align: center;
     border-radius: 50%;
@@ -223,17 +223,17 @@ h6, .heading-6 {
     color: #FFFFFF;
 }
 .swiper-button-prev {
-    left: -60px;
+    left: -60px !important;
 }
 .swiper-button-next {
-    right: -60px;
+    right: -60px !important;
 }
 .swiper-button-next, .swiper-button-prev {
-    background-color: #e4e6e8;
-    font-size: 0px;
+    background-color: #e4e6e8 !important;
+    font-size: 0px !important;
 }
 .swiper-button-next:hover, .swiper-button-prev:hover {
-    background-color: #000000;
+    background-color: #000000 !important;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
@@ -241,7 +241,7 @@ h6, .heading-6 {
     transition: all 0.4s ease;
 }
 .swiper-button-next:after, .swiper-button-prev:after {
-    font-size: 0px;
+    font-size: 0px !important;
 }
 .swiper-button-next:hover svg, .swiper-button-prev:hover svg {
     -webkit-transition: all 0.4s ease;
@@ -251,7 +251,7 @@ h6, .heading-6 {
     transition: all 0.4s ease;
 }
 .swiper-button-next:hover svg, .swiper-button-prev:hover svg {
-    stroke: #FFFFFF;
+    stroke: #FFFFFF !important;
 }
 .navbar-toggler {
     padding: 0.35rem 0.45rem;
@@ -661,10 +661,10 @@ h6, .heading-6 {
         font-size: 24px;
     }
     .mySwiper .swiper-button-prev {
-        left: 0px;
+        left: 0px !important;
     }
     .mySwiper .swiper-button-next {
-        right: 0px;
+        right: 0px !important;
     }
     h2, .heading-2 {
         font-size: 32px;
