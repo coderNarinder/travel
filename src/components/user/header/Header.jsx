@@ -31,7 +31,7 @@ export default function Header() {
         <Navbar.Toggle aria-controls="navbarScroll" onClick={handleToggle} />
         <Navbar.Collapse className="top-navigation" id="navbarScroll">
           <Nav id="navbarScroll">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Tours" id="tours-dropdown">
               <NavDropdown title="City Tours" id="city-tours-dropdown">
                 <NavDropdown.Item href="#">New York City Tour</NavDropdown.Item>
@@ -75,7 +75,7 @@ export default function Header() {
 
               <NavDropdown.Divider />
 
-              <NavDropdown.Item href="#">View All Tours</NavDropdown.Item>
+              <NavDropdown.Item href="/list">View All Tours</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Destinations" id="destinations-dropdown">
               <NavDropdown.Item href="#">Paris, France</NavDropdown.Item>

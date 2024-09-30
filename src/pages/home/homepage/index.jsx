@@ -1,6 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import { Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Tab from 'react-bootstrap/Tab';
@@ -117,15 +116,64 @@ const featuredTours = [
 ];
 
 const destinations = [
-  { title: "Rowing", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination.png", locations: 34 },
-  { title: "Amsterdam", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination2.png", locations: 65 },
-  { title: "Budapest", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination3.png", locations: 41 },
-  { title: "Lisbon", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination4.png", locations: 71 },
-  { title: "Venice", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination.png", locations: 69 },
-  { title: "Amsterdam", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination2.png", locations: 27 },
-  { title: "Budapest", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination3.png", locations: 52 },
-  { title: "Lisbon", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination4.png", locations: 84 },
+  { 
+    title: "Sea Diving", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination.png", 
+    locations: 34, 
+    availability: "All year", 
+    duration: "3-4 hours" 
+  },
+  { 
+    title: "Rowing", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination2.png", 
+    locations: 65, 
+    availability: "All year",
+    duration: "1-2 hours" 
+  },
+  { 
+    title: "Bungee Jump", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination3.png", 
+    locations: 41, 
+    availability: "All year",
+    duration: "30 minutes" 
+  },
+  { 
+    title: "Sky Diving", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination4.png", 
+    locations: 71, 
+    availability: "All year",
+    duration: "5-6 hours" 
+  },
+  { 
+    title: "Camel Ride", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination.png", 
+    locations: 69, 
+    availability: "All year",
+    duration: "2-3 hours" 
+  },
+  { 
+    title: "Snow Boarding", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination2.png", 
+    locations: 27, 
+    availability: "All year",
+    duration: "3-5 hours" 
+  },
+  { 
+    title: "Desert Safari", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination3.png", 
+    locations: 52, 
+    availability: "All year",
+    duration: "4-6 hours" 
+  },
+  { 
+    title: "Sand Skating", 
+    img: "https://travila-demos.vercel.app/assets/imgs/page/homepage6/destination4.png", 
+    locations: 84, 
+    availability: "All year",
+    duration: "2-3 hours" 
+  }
 ];
+
 
 import offer1 from './../../../../public/offer-1.png';
 import offer2 from './../../../../public/offer-2.png';
@@ -177,6 +225,27 @@ const slidesData = [
     buttonLabel: "Join the Journey",
   },
 ];
+
+import icons1 from "./../../../../public/images/common/car.png"
+import icons2 from "./../../../../public/images/common/tour.png"
+import icons3 from "./../../../../public/images/common/camel.png"
+import icons4 from "./../../../../public/images/common/food.png"
+
+const galleryData = [
+  { id: 1, src: 'https://travila-demos.vercel.app/assets/imgs/page/homepage1/news2.png', },
+  { id: 2, src: 'https://travila-demos.vercel.app/assets/imgs/page/homepage1/news.png', },
+  { id: 3, src: 'https://travila-demos.vercel.app/assets/imgs/page/homepage1/news3.png', },
+  { id: 4, src: 'https://travila-demos.vercel.app/assets/imgs/page/homepage5/tour.png', },
+  { id: 5, src: 'https://travila-demos.vercel.app/assets/imgs/page/homepage5/tour2.png', },
+  { id: 6, src: 'https://travila-demos.vercel.app/assets/imgs/page/homepage5/tour3.png', }
+];
+
+const whyus = [
+    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/security.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 34, availability: "All year round", duration: "3-4 hours" },
+    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/support.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 65, availability: "March to November", duration: "1-2 hours" },
+    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/policy.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 41, availability: "April to October", duration: "30 minutes" },
+    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/repu.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 71, availability: "All year round", duration: "5-6 hours" },
+  ];
 
 const HomePage = () => {
     return (
@@ -296,7 +365,16 @@ const HomePage = () => {
                         <div className="card-left"> </div>
                         <div className="card-right"> <span className="rating">{tour.rating} <span className="text-sm-medium neutral-500">({tour.reviews})</span></span></div>
                       </div>
+                      <div className="icons">
+                        <img src={icons1} alt="Car" />
+                        <img src={icons2} alt="Tour" />
+                        <img src={icons3} alt="Camel" />
+                        <img src={icons4} alt="Food" />
+                      </div>
                       <div className="card-title"> <a className="heading-6 neutral-1000" href="#">{tour.title}</a></div>
+                      <div className="card-desc">
+                        <p>Experience the desert safari in the morning! Morning Desert Safari is perfect for tourists and includes dune bashing...</p>
+                      </div>
                       <div className="card-program"> 
                         <div className="card-duration-tour"> 
                           <p className="icon-duration text-md-medium neutral-500">{tour.duration}</p>
@@ -321,11 +399,11 @@ const HomePage = () => {
         <div className='section-activities'>
           <Container>
             <Row className='align-items-center'>
-              <Col className='col-md-10'>
+              <Col className='col-12 col-md-10'>
                 <h4 className='heading-4 mb-0'>Exciting Tour Activities</h4>
                 <p className="text-xl-medium neutral-500">Discover unforgettable experiences with our curated tours.</p>
               </Col>
-              <Col className='col-md-2 text-end'>
+              <Col className='col-12 col-md-2 text-start text-md-end'>
                 <a class="btn btn-black-lg" href="#">View More 
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -352,6 +430,8 @@ const HomePage = () => {
                           </a>
                         </div>
                       </div>
+                      <p className='mb-0'>Availibility: {destination.availability}</p>
+                      <p className='mb-0'>Duration: {destination.duration}</p>
                     </div>
                   </a>
                 </Col>
@@ -405,6 +485,54 @@ const HomePage = () => {
             </div>
           </Container>
         </div>
+
+        <section className='section-gallery'>
+          <Container>
+            <h2 className="text-center my-1">Image Gallery</h2>
+            <p class="text-xl-medium text-center neutral-500">Discover how you can offset your adventure's carbon emissions <br /> and support the sustainable initiatives practiced by our operators worldwide.</p>
+            <Row className='mt-4'>
+              {galleryData.map((image) => (
+                <Col key={image.id} xs={12} sm={6} md={4} className="mb-4">
+                  <Card>
+                    <Card.Img variant="top" src={image.src} />
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        <section className='section-gallery'>
+          <Container>
+            <h2 className="text-center my-1">Why Travel With Us?</h2>
+            <p class="text-xl-medium text-center neutral-500">The best booking platform you can trust</p>
+            <Row className='mt-4'>              
+              {whyus.map((whyus, index) => (
+                <Col xs={12} sm={6} md={3} className="mb-4" key={index}>
+                  <Card className={`card-why-travel background-${index + 1} hover-up`}>
+                    <div className="card-image">
+                      <img src={whyus.img} alt={whyus.title} />
+                    </div>
+                    <div className="card-info">
+                      <a className="text-xl-bold card-title" href="#">
+                        {whyus.title}
+                      </a>
+                      <p className="text-sm-medium neutral-500 card-desc">
+                        {whyus.desc}
+                      </p>
+                      <a className="text-sm-medium card-link" href="#">
+                        Learn More 
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.50011 9.08347L9.58347 5.00011L5.50011 0.916748M9.58347 5.00011L1.41675 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
 
       </>
     );

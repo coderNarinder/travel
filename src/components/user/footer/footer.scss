@@ -71,3 +71,8 @@ a.icon-socials svg {
     padding: 16px 0px 16px 0px;
     border-top: 1px solid rgba(87, 86, 86, 0.4901960784);
 }
+@media screen and (max-width: 767px) {
+    .container-footer {
+        padding: 42px 8px 0px 8px;
+    }
+}

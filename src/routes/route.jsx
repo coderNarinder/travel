@@ -7,6 +7,7 @@ const SliderListing = lazy(() => import('../pages/cpanel/sliders'));
 
 const HomeLayout = lazy(() => import('../pages/home/layout'));
 const HomePage = lazy(() => import('../pages/home/homepage'));
+const ListPage = lazy(() => import('../pages/home/listpage'));
 const NotFound = lazy(() => import('../pages/notfound'));
 const ActivityPage = lazy(() => import('../pages/activities/ActivityPage'));
 const TrackingPage = lazy(() => import('../pages/tracking/TrackingPage'));
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
                         <HomePage />
+                    </Suspense>
+                )
+            },
+            {
+                path: '/list',
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ListPage />
                     </Suspense>
                 )
             }

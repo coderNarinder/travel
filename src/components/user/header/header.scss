@@ -68,6 +68,10 @@
 .btn.btn-black-lg-square img {
     margin-right: 12px;
 }
+.navbar-expand-lg .top-navigation .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
 @media (min-width: 991px) {
     .navbar-expand-lg .top-navigation .navbar-nav .nav-link {
         padding-right: 1rem;
@@ -80,5 +84,13 @@
 @media (max-width: 991px) {
     .language-dropdown {
         margin-right: 1rem;
+    }
+}
+@media (max-width: 767px) {
+    .top-header .btn.btn-black-lg-square {
+        padding: 4px 18px;
+    }
+    .navbar-light .navbar-toggler {
+        order: 1;
     }
 }
