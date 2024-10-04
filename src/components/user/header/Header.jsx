@@ -89,7 +89,7 @@ export default function Header() {
               <NavDropdown.Item href="#">Rome, Italy</NavDropdown.Item>
               <NavDropdown.Item href="#">Istanbul, Turkey</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#">View All Destinations</NavDropdown.Item>
+              <NavDropdown.Item href="#">Explore more Destinations</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Activities" id="basic-nav-dropdown">
@@ -165,6 +165,18 @@ export default function Header() {
               <NavDropdown.Item href="#">View All Activities</NavDropdown.Item>
             </NavDropdown>
 
+            <NavDropdown title="Events" id="nav-dropdown-events">
+              <NavDropdown.Item href="#action/conference2024">Conference 2024</NavDropdown.Item>
+              <NavDropdown.Item href="#action/workshop-ai">AI Workshop</NavDropdown.Item>
+              <NavDropdown.Item href="#action/travel-expo">Travel Expo</NavDropdown.Item>
+              <NavDropdown.Item href="#action/music-festival">Music Festival</NavDropdown.Item>
+              <NavDropdown.Item href="#action/startup-summit">Startup Summit</NavDropdown.Item>
+              <NavDropdown.Item href="#action/food-fair">Food Fair</NavDropdown.Item>
+              <NavDropdown.Item href="#action/tech-meetup">Tech Meetup</NavDropdown.Item>
+              <NavDropdown.Item href="#action/art-exhibition">Art Exhibition</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#">View All Events</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="#">My Bookings</Nav.Link>
             <Nav.Link href="#">Blog</Nav.Link>
             <Nav.Link href="#">Contact Us</Nav.Link>

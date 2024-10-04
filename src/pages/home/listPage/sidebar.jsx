@@ -1,13 +1,11 @@
 import React from "react";
 import { Form, Collapse } from "react-bootstrap";
-import "./sidebar.scss";
 
 const SidebarFilters = () => {
   return (
     <div className="content-left order-lg-first">
       <div className="sidebar-left border-1 background-body">
         <div className="box-filters-sidebar">
-          {/* Filter Price */}
           <div className="block-filter border-1">
             <h6 className="text-lg-bold item-collapse neutral-1000">
               Filter Price
@@ -16,9 +14,7 @@ const SidebarFilters = () => {
               <div className="box-collapse scrollFilter">
                 <div className="pt-20">
                   <div className="box-slider-range">
-                    {/* Replace with a custom or third-party range slider */}
                     <div id="slider-range" className="noUi-target noUi-ltr noUi-horizontal noUi-connect">
-                      {/* Range Slider */}
                     </div>
                     <div className="box-value-price">
                       <span className="text-md-medium neutral-1000">$0</span>
@@ -29,8 +25,6 @@ const SidebarFilters = () => {
               </div>
             </Collapse>
           </div>
-
-          {/* Vendor */}
           <div className="block-filter border-1">
             <h6 className="text-lg-bold item-collapse neutral-1000">
               Vendor
@@ -78,8 +72,6 @@ const SidebarFilters = () => {
               </div>
             </Collapse>
           </div>
-
-          {/* Customer Rating */}
           <div className="block-filter border-1">
             <h6 className="text-lg-bold item-collapse neutral-1000">
               Customer Rating
@@ -115,8 +107,6 @@ const SidebarFilters = () => {
               </div>
             </Collapse>
           </div>
-
-          {/* Availability */}
           <div className="block-filter border-1">
             <h6 className="text-lg-bold item-collapse neutral-1000">
               Availability
@@ -134,8 +124,6 @@ const SidebarFilters = () => {
               </div>
             </Collapse>
           </div>
-
-          {/* Discount */}
           <div className="block-filter border-1">
             <h6 className="text-lg-bold item-collapse neutral-1000">
               Discount

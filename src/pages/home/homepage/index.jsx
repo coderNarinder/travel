@@ -1,24 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import AdvancedSearch from '../../../components/user/search';
 import 'swiper/css';
-
-import './../../../../public/css/bootstrap.min.css';
-import './../../../../public/css/jquery-ui.min.css';
-import './../../../../public/css/ace-responsive-menu.css';
-import './../../../../public/css/menu.css';
-import './../../../../public/css/fontawesome.css';
-import './../../../../public/css/flaticon.css';
-import './../../../../public/css/bootstrap-select.min.css';
-import './../../../../public/css/animate.css';
-import './../../../../public/css/slider.css';
-import './../../../../public/css/style.css';
-import './../../../../public/css/ud-custom-spacing.css';
-import './../../../../public/css/responsive.css';
 import './index.scss';
 
 const popularDestinations = [
@@ -217,13 +204,6 @@ const slidesData = [
     subheading: "Discover breathtaking views and picturesque locations worldwide.",
     buttonLabel: "Join the Journey",
   },
-  {
-    id: 5,
-    imageUrl: "https://scontent.fdel27-4.fna.fbcdn.net/v/t39.30808-6/416845048_939164634441266_1098564823287424567_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ZFS016GCp0UQ7kNvgE4WGFY&_nc_ht=scontent.fdel27-4.fna&_nc_gid=A3fvwdARWXMQpmKBNfyPNJV&oh=00_AYCXX9kdJ-dsFHG90rAqq4px96BPNlffsAsFXmh6Ndq7XQ&oe=66FC433D",
-    heading: "Cultural Journeys and Unique Experiences",
-    subheading: "Dive into rich traditions and heritage from around the world.",
-    buttonLabel: "Join the Journey",
-  },
 ];
 
 import icons1 from "./../../../../public/images/common/car.png"
@@ -241,11 +221,71 @@ const galleryData = [
 ];
 
 const whyus = [
-    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/security.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 34, availability: "All year round", duration: "3-4 hours" },
-    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/support.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 65, availability: "March to November", duration: "1-2 hours" },
-    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/policy.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 41, availability: "April to October", duration: "30 minutes" },
-    { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/repu.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 71, availability: "All year round", duration: "5-6 hours" },
-  ];
+  { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/security.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 34, availability: "All year round", duration: "3-4 hours" },
+  { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/support.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 65, availability: "March to November", duration: "1-2 hours" },
+  { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/policy.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 41, availability: "April to October", duration: "30 minutes" },
+  { title: "Security Assurance", img: "https://travila-demos.vercel.app/assets/imgs/page/homepage2/repu.svg", desc: "Demonstrates commitment to user data security through encryption and secure payment practices", locations: 71, availability: "All year round", duration: "5-6 hours" },
+];
+
+const events = [
+  {
+    id: 1,
+    title: 'Venice Carnival',
+    locations: 'Venice, Italy',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 2,
+    title: 'Fête de la Musique',
+    locations: 'Paris, France',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot2.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 3,
+    title: 'Notting Hill Carnival',
+    locations: 'London, UK',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot3.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 4,
+    title: 'Rome Film Festival',
+    locations: 'Rome, Italy',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot4.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 5,
+    title: 'Macy’s Thanksgiving Day Parade',
+    locations: 'New York, USA',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot5.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 6,
+    title: 'Tokyo Cherry Blossom Festival',
+    locations: 'Tokyo, Japan',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot6.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 7,
+    title: 'Sydney New Year’s Eve Fireworks',
+    locations: 'Sydney, Australia',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot7.png',
+    link: 'destination-4.html',
+  },
+  {
+    id: 8,
+    title: 'Dubai Shopping Festival',
+    locations: 'Dubai, UAE',
+    imageUrl: 'https://travila-demos.vercel.app/assets/imgs/page/homepage4/spot8.png',
+    link: 'destination-4.html',
+  },
+];
+
 
 const HomePage = () => {
     return (
@@ -335,17 +375,85 @@ const HomePage = () => {
           </Container>
         </div>
 
+        <section className="section-events">
+          <Container>
+            <Row className='align-items-center'>
+              <Col className='col-12 col-md-10'>
+                <h4 className='heading-4 mb-0'>Events to explore in your City</h4>
+                <p className="text-xl-medium neutral-500">Discover unforgettable experiences with our curated tours.</p>
+              </Col>
+              <Col className='col-12 col-md-2 text-start text-md-end'>
+                <a class="btn btn-black-lg" href="#">View More 
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </Col>
+            </Row>
+
+            <div className="box-list-events">
+              {events.map(event => (
+                <div className="card-event">
+                  <div className="event-image">
+                    <a href={event.link}>
+                      <img src={event.imageUrl} alt={event.title} />
+                    </a>
+                  </div>
+                  <div className="card-info background-card">
+                    <div className="card-left">
+                      <div className="card-title">
+                        <a className="text-lg-bold neutral-1000" href={event.link}>
+                          {event.title}
+                        </a>
+                      </div>
+                      <div className="card-desc">
+                        <a className="text-sm neutral-500" href={event.link}>
+                          {event.locations}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="card-right">
+                      <div className="card-button">
+                        <a href={event.link}>
+                          Read more
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke='#000' xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
         <div className='section-featured'>
           <Container>
-            <h4 className='heading-4 text-center mb-0'>Our Featured Tours</h4>
-            <p className="text-xl-medium neutral-500 text-center">Favorite destinations based on customer reviews</p>
-            <Tabs transition={false} id="tab-featured-list">
-              <Tab eventKey="home" title="Attractives"></Tab>
+          <Row className='align-items-center'>
+              <Col className='col-12 col-md-10'>
+                <h4 className='heading-4 mb-0'>Our Featured Tours</h4>
+                <p className="text-xl-medium neutral-500">Favorite destinations based on customer reviews</p>
+              </Col>
+              <Col className='col-12 col-md-2 text-start text-md-end'>
+                <a class="btn btn-black-lg" href="#">View More 
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </Col>
+            </Row>
+            <Tabs transition={false} id="tab-featured-list" className='mt-3'>
+              <Tab eventKey="Honeymoon" title="Honeymoon"></Tab>
               <Tab eventKey="profile" title="Adventure"></Tab>
-              <Tab eventKey="nature" title="Nature"></Tab>
+              <Tab eventKey="nature" title="Nature View"></Tab>
               <Tab eventKey="Sands" title="Marina Bay Sands"></Tab>
-              <Tab eventKey="Travila" title="Travila"></Tab>
-              <Tab eventKey="Ride" title="Perfect Ride"></Tab>
+              <Tab eventKey="Back Packer" title="Back Packer"></Tab>
+              <Tab eventKey="Desert Safari" title="Desert Safari"></Tab>
+              <Tab eventKey="Wildlife Safari" title="Wildlife Safari"></Tab>
+              <Tab eventKey="City Sightseeing" title="City Sightseeing"></Tab>
+              <Tab eventKey="Pilgrim Tour" title="Pilgrim Tour"></Tab>
             </Tabs>
             <div className="featured-list row">
               {featuredTours.map((tour, index) => (
@@ -488,7 +596,7 @@ const HomePage = () => {
 
         <section className='section-gallery'>
           <Container>
-            <h2 className="text-center my-1">Image Gallery</h2>
+            <h4 className="heading-4 text-center my-1">Tour Gallery</h4>
             <p class="text-xl-medium text-center neutral-500">Discover how you can offset your adventure's carbon emissions <br /> and support the sustainable initiatives practiced by our operators worldwide.</p>
             <Row className='mt-4'>
               {galleryData.map((image) => (
@@ -504,7 +612,7 @@ const HomePage = () => {
 
         <section className='section-gallery'>
           <Container>
-            <h2 className="text-center my-1">Why Travel With Us?</h2>
+            <h2 className="heading-4 text-center my-1">Why Travel With Us?</h2>
             <p class="text-xl-medium text-center neutral-500">The best booking platform you can trust</p>
             <Row className='mt-4'>              
               {whyus.map((whyus, index) => (

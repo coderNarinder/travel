@@ -7993,7 +7993,7 @@ li.mm-listitem:focus {
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 0.875rem;
-  border-radius: 12px;
+  border-radius: 6px;
   cursor: pointer;
   background-color: #ebebeb;
   border: 1px solid #F5F5F5;

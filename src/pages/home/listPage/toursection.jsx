@@ -109,7 +109,7 @@ const TourSection = () => {
                       <h6 className="heading-6 neutral-1000">{tour.price}</h6>
                       <p className="text-md-medium neutral-500">/ person</p>
                     </div>
-                    <div className="card-button"> <a className="btn btn-gray" href="#">Book Now</a></div>
+                    <div className="card-button"> <a className="btn btn-gray" href="/single-tour">Book Now</a></div>
                   </div>
                 </div>
               </div>

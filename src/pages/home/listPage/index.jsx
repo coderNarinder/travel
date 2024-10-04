@@ -1,35 +1,73 @@
 import React from 'react'
-
-import './../../../../public/css/bootstrap.min.css';
-import './../../../../public/css/jquery-ui.min.css';
-import './../../../../public/css/ace-responsive-menu.css';
-import './../../../../public/css/menu.css';
-import './../../../../public/css/fontawesome.css';
-import './../../../../public/css/flaticon.css';
-import './../../../../public/css/bootstrap-select.min.css';
-import './../../../../public/css/animate.css';
-import './../../../../public/css/slider.css';
-import './../../../../public/css/style.css';
-import './../../../../public/css/ud-custom-spacing.css';
-import './../../../../public/css/responsive.css';
-import './index.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import SidebarFilters from './sidebar';
 import TourSection from './toursection';
+import './index.scss';
 
 export default function index() {
   return (
     <>
+      
       <section className='box-section block-banner-tourlist'>
         <Container>
           <Row>
             <Col md={12} className='text-center'>
               <h3>Journey with Travila - Begin Your Story!</h3>
-              <h6 className="heading-6-medium">Easily search for top tours offered by our professional network</h6>
+              <h6 className="heading-6-medium neutral-1000">Easily search for top tours offered by our professional network</h6>
             </Col>
           </Row>
         </Container>
       </section>
+
+      <div className="box-breadcrumb">
+        <div className="container">
+          <ul className="breadcrumbs">
+            <li>
+              <a href="index.html">Home</a>
+              <span className="arrow-right">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 11L6 6L1 1"
+                    stroke=""
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </li>
+            <li>
+              <a href="destination.html">Tours</a>
+              <span className="arrow-right">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 11L6 6L1 1"
+                    stroke=""
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </li>
+            <li>
+              <span className="text-breadcrumb">All Tours</span>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <section className='section-tourlist'>
         <Container>
