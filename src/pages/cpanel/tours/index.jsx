@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { hideLoader, showLoader } from "../../../reducers/loaderSlice";
 import { success, danger } from '../../../reducers/toasterSlice';
 import "./index.css";
+import TimingSection from "./components/timing-section";
 const CreateTour = () => {
   const dispatch = useDispatch();
 
@@ -39,7 +40,7 @@ const CreateTour = () => {
   };
 
   const getCountry = () => {
-      getRequestGod("v1/country/listing?skip=0&limit=1000")
+      getRequestGod("v1/country/listing?skip=0&limit=100")
         .then((res) => {
           setCountry(res.data); 
         })
@@ -84,6 +85,9 @@ const CreateTour = () => {
               <Tab eventKey="General Information" title="General Information">
                 <ProductGeneralSection />
               </Tab>
+              <Tab eventKey="Timing" title="Timing">
+                <TimingSection />
+              </Tab>
               <Tab eventKey="Translations" title="Translations">
                 <TranslationTab />
               </Tab>
@@ -100,6 +104,9 @@ const CreateTour = () => {
                   <TermAndConditions />
               </Tab>
               <Tab eventKey="Other Information" title="Other Information">
+                { product?.id && ( <OtherSection /> )}
+              </Tab>
+              <Tab eventKey="Actvities" title="Actvities">
                 { product?.id && ( <OtherSection /> )}
               </Tab>
             </Tabs>

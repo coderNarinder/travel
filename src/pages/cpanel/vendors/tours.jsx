@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getRequest, postRequest } from '../../../service';
+import CeateTourPopup from './sections/create-tour-popup';
 
 const TourList = () => {
   const { slug } = useParams();
@@ -11,19 +12,8 @@ const TourList = () => {
   const [skip, setSkip] = useState(0);
   const limit = 20;
 
-  const createNewTour = () => {
-    setLoading(true);
-    postRequest(`v1/vendor/${slug}/product/store`, { name: "test" })
-      .then(res => {
-        if (res.success) {
-          alert("Vendor created successfully");
-          window.location.href = `/cpanel/vendor-detail/${slug}/tour/${res.data.id}/edit`;
-        }
-      })
-      .catch(() => alert("Error creating category"))
-      .finally(() => setLoading(false));
-  };
-
+  const [openPopup, setOpenPopup] = useState(false);
+ 
   const getTours = useCallback(() => {
     setLoading(true);
     getRequest(`v1/vendor/${slug}/product/listing?skip=${skip}&limit=${limit}`)
@@ -43,13 +33,15 @@ const TourList = () => {
     getTours();
   }, [getTours]);
 
+ 
   return (
     <>
       <div className="card">
         <div className="card-body">
           <div className='d-flex align-items-center justify-content-between mb-2'>
             <span>Citymax Hotel Bur Dubai's Tour list:</span>
-            <button className='btn btn-primary' onClick={createNewTour}>Add New Tour</button>
+            
+            <CeateTourPopup slug={slug}/>
           </div>
           <div className="row">
             <div className="col-lg-12">
@@ -124,6 +116,8 @@ const TourList = () => {
           </div>
         </div>
       </div> 
+
+      
     </>
   );
 };

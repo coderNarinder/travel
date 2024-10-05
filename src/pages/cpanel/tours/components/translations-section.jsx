@@ -82,7 +82,7 @@ const TranslationTab = () => {
           <Card.Title className="h3">General Details</Card.Title> 
           <Row>
             <Col md={8}>   
-                <TranslationSection translationFields={translationFields}  watch={watch} register={register} control={control} errors={errors}/> 
+                <TranslationSection translationFields={translationFields} watch={watch} register={register} control={control} errors={errors}/> 
             </Col>  
             <Col md={4}>
                     <h5 className="card-title mb-2">Choose Languages For Translations</h5>

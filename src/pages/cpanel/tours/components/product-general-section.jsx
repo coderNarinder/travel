@@ -28,6 +28,7 @@ const ProductGeneralSection = () => {
 
   useEffect(() => {
     setValue("step",'general-data'); 
+    setValue("is_bookable",product?.is_bookable);
     setValue("name", product?.name); 
     setValue("description", product?.description);
     setValue("short_description", product?.short_description);
@@ -158,6 +159,37 @@ const ProductGeneralSection = () => {
                         </Col>
                     </Form.Group>
 
+                    {product?.type != "tour" && (
+                        <Form.Group as={Row}>
+                        <Form.Label column sm={3}>
+                        Is it bookable?
+                        </Form.Label>
+                        <Col sm={3}>
+                        <Form.Check
+                            type="radio"
+                            label="Yes, it can be booked directly"
+                            value={1}
+                            id="yes_bookable"
+                            {...register("is_bookable", {
+                            required: "The field is required",
+                            })}
+                        />
+                        </Col>
+                        <Col sm={3}>
+                        <Form.Check
+                            type="radio"
+                            label="No, only available in a package"
+                            value={0}
+                            id="not_bookable"
+                            {...register("is_bookable", {
+                            required: "The field is required",
+                            })}
+                        />
+                        </Col>
+                        
+                    </Form.Group>
+                   )}
+                   
                     <Form.Group as={Row}>
                         <Form.Label column sm={3}>
                         People Limit

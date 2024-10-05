@@ -102,9 +102,7 @@ export default function SavePickupLocation({
           </Col> 
           <Button type="submit" className="btn btn-primary">
             Save Pickup Location
-          </Button>
-
-          
+          </Button> 
         </Row>
       </Form> 
       </Card.Body>

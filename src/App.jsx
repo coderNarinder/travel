@@ -17,19 +17,25 @@ const App = () => {
 
   useEffect(() => {
     const fetchWebData = async () => {
-      try {
-        const res = await postRequest('v1/check-domain', {});
+      setLoading(true);
+      postRequest(`v1/check-domain`, {})
+      .then((res) => {
+        console.log('res',res);
         if (res?.success) {
           setClient(res.data); 
-        }
-        setIsDomain(res.success);
+          setIsDomain(true);
+        } 
         setLoading(false);
-      } catch (error) {
-        console.error('Error fetching web data:', error);
-      }
+      })
+      .catch(() =>  console.log(1) )
+      .finally(() => {
+          
+      }); 
     }; 
     fetchWebData();
-  }, []);  
+  }, []); 
+  
+  console.log('client',client);
 
   return (
     <>
@@ -56,15 +62,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// import { RouterProvider } from 'react-router-dom';
-// import { router } from './routes/route';
- 
-// const App = () => {
-//   return (
-//     <RouterProvider router={router} />
-//   );
-// }
-
-// export default App;
