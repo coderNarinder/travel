@@ -6816,7 +6816,6 @@ textarea:focus {
   color: var(--headings-color);
   font-size: 13px;
   font-weight: 400;
-  height: 50px;
   padding: 10px 30px;
 }
 
@@ -7994,7 +7993,7 @@ li.mm-listitem:focus {
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 0.875rem;
-  border-radius: 12px;
+  border-radius: 6px;
   cursor: pointer;
   background-color: #ebebeb;
   border: 1px solid #F5F5F5;

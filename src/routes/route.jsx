@@ -2,11 +2,13 @@ import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom'; 
 import CreateSlider from '../pages/cpanel/sliders/create';
 import EditSlider from '../pages/cpanel/sliders/edit';
+import SingleTour from '../pages/home/singletour';
 
 const SliderListing = lazy(() => import('../pages/cpanel/sliders'));
 
 const HomeLayout = lazy(() => import('../pages/home/layout'));
 const HomePage = lazy(() => import('../pages/home/homepage'));
+const ListPage = lazy(() => import('../pages/home/listPage'));
 const NotFound = lazy(() => import('../pages/notfound'));
 const ActivityPage = lazy(() => import('../pages/activities/ActivityPage'));
 const TrackingPage = lazy(() => import('../pages/tracking/TrackingPage'));
@@ -44,6 +46,22 @@ const router = createBrowserRouter([
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
                         <HomePage />
+                    </Suspense>
+                )
+            },
+            {
+                path: '/list',
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ListPage />
+                    </Suspense>
+                )
+            },
+            {
+                path: '/single-tour',
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <SingleTour />
                     </Suspense>
                 )
             }
